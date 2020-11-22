@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>二叉树 on JayaYuan</title>
+    <link>https://fenp.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+    <description>Recent content in 二叉树 on JayaYuan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 27 Oct 2020 16:48:51 +0800</lastBuildDate><atom:link href="https://fenp.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>二叉树的遍历</title>
+      <link>https://fenp.github.io/post/binarytreetraversal/</link>
+      <pubDate>Tue, 27 Oct 2020 16:48:51 +0800</pubDate>
+      
+      <guid>https://fenp.github.io/post/binarytreetraversal/</guid>
+      <description>二叉树是一种重要的树形数据结构, 对其遍历的方式有以下几种:
+前序
+中序
+后序
+每一种遍历方式都有递归 与 非递归两种, 本文使用java分别进行实现
+  二叉树的数据结构定义如下
+ class TreeNode { int val; TreeNode left; TreeNode right; TreeNode() {} TreeNode(int val) { this.val = val; } TreeNode(int val, TreeNode left, TreeNode right) { this.val = val; this.left = left; this.right = right; } }  递归
+递归版本简单易懂, 注意递归顺序   前序(PreOrder)  class Solution { public List&amp;lt;Integer&amp;gt; preorderTraversal(TreeNode root) { List&amp;lt;Integer&amp;gt; ans = new ArrayList&amp;lt;Integer&amp;gt;(); preOrder(root, ans); return ans; } private void preOrder(TreeNode root, List&amp;lt;Integer&amp;gt; ans){ if(root == null) return; ans.</description>
+    </item>
+    
+  </channel>
+</rss>
