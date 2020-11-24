@@ -47,7 +47,7 @@
     "articleSection" : "post",
     "name" : "二叉树的遍历",
     "headline" : "二叉树的遍历",
-    "description" : "二叉树是一种重要的树形数据结构, 对其遍历的方式有以下几种:\n前序\n中序\n后序\n每一种遍历方式都有递归 与 非递归两种, 本文使用java分别进行实现\n  二叉树的数据结构定义如下\n class TreeNode { int val; TreeNode left; TreeNode right; TreeNode() {} TreeNode(int val) { this.val = val; } TreeNode(int val, TreeNode left, TreeNode right) { this.val = val; this.left = left; this.right = right; } }  递归\n递归版本简单易懂, 注意递归顺序   前序(PreOrder)  class Solution { public List\u0026lt;Integer\u0026gt; preorderTraversal(TreeNode root) { List\u0026lt;Integer\u0026gt; ans = new ArrayList\u0026lt;Integer\u0026gt;(); preOrder(root, ans); return ans; } private void preOrder(TreeNode root, List\u0026lt;Integer\u0026gt; ans){ if(root == null) return; ans.",
+    "description" : "二叉树是一种重要的树形数据结构, 对其遍历的方式有以下几种: 前序\n中序\n后序\n每一种遍历方式都有递归 与 非递归两种, 本文使用java分别进行实现\n  二叉树的数据结构定义如下  class TreeNode { int val; TreeNode left; TreeNode right; TreeNode() {} TreeNode(int val) { this.val = val; } TreeNode(int val, TreeNode left, TreeNode right) { this.val = val; this.left = left; this.right = right; } }  二叉树的遍历    递归 递归版本简单易懂, 注意递归顺序\n   前序(PreOrder)  class Solution { public List\u0026lt;Integer\u0026gt; preorderTraversal(TreeNode root) { List\u0026lt;Integer\u0026gt; ans = new ArrayList\u0026lt;Integer\u0026gt;(); preOrder(root, ans); return ans; } private void preOrder(TreeNode root, List\u0026lt;Integer\u0026gt; ans){ if(root == null) return; ans.",
     "inLanguage" : "en-us",
     "author" : "JayaYuan",
     "creator" : "JayaYuan",
@@ -58,7 +58,7 @@
     "datePublished": "2020-10-27 16:48:51 \u002b0800 CST",
     "dateModified" : "2020-10-27 16:48:51 \u002b0800 CST",
     "url" : "https:\/\/fenp.github.io\/post\/binarytreetraversal\/",
-    "wordCount" : "386",
+    "wordCount" : "387",
     "keywords" : [ "二叉树", "JayaYuan"]
 }
 </script>
@@ -149,14 +149,14 @@
           
 
           <blockquote>
-<p>二叉树是一种重要的树形数据结构, 对其遍历的方式有以下几种:<br>
-<a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/">前序</a><br>
+<h3 id="二叉树是一种重要的树形数据结构-对其遍历的方式有以下几种">二叉树是一种重要的树形数据结构, 对其遍历的方式有以下几种:</h3>
+<p><a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/">前序</a><br>
 <a href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/">中序</a><br>
 <a href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/">后序</a><br>
 每一种遍历方式都有<em><strong>递归</strong></em> 与 <em><strong>非递归</strong></em>两种, 本文使用java分别进行实现</p>
 </blockquote>
 <blockquote>
-<p>二叉树的数据结构定义如下</p>
+<h3 id="二叉树的数据结构定义如下">二叉树的数据结构定义如下</h3>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TreeNode</span> <span style="color:#f92672">{</span>
 	<span style="color:#66d9ef">int</span> val<span style="color:#f92672">;</span>
@@ -172,12 +172,17 @@
     	<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">=</span> right<span style="color:#f92672">;</span>
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><ul>
-<li><strong>递归</strong><br>
-递归版本简单易懂, 注意递归顺序</li>
+</code></pre></div><blockquote>
+<h3 id="二叉树的遍历">二叉树的遍历</h3>
+</blockquote>
+<ul>
+<li>
+<h4 id="递归"><strong>递归</strong></h4>
+<p>递归版本简单易懂, 注意递归顺序</p>
+</li>
 </ul>
 <ol>
-<li>前序(PreOrder)</li>
+<li><strong>前序(PreOrder)</strong></li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">preorderTraversal</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
@@ -195,7 +200,7 @@
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><ol start="2">
-<li>中序(InOrder)</li>
+<li><strong>中序(InOrder)</strong></li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">inorderTraversal</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
@@ -213,7 +218,7 @@
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><ol start="3">
-<li>后序(PostOrder)</li>
+<li><strong>后序(PostOrder)</strong></li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">postorderTraversal</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
@@ -231,10 +236,12 @@
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><ul>
-<li><strong>非递归</strong></li>
+<li>
+<h4 id="非递归"><strong>非递归</strong></h4>
+</li>
 </ul>
 <ol>
-<li>前序(PreOrder)</li>
+<li><strong>前序(PreOrder)</strong></li>
 </ol>
 <p>  非递归即用迭代的方法模拟递归, 首先思考一下递归时的情况:</p>
 <ul>
@@ -271,7 +278,7 @@
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><ol start="2">
-<li>中序(InOrder)</li>
+<li><strong>中序(InOrder)</strong></li>
 </ol>
 <p>  中序和前序的区别在于: <strong>前序在第一次遇到结点时就访问, 中序则为第二次遇到结点时才访问</strong>。因而只要对前序遍历的迭代版本代码稍作改动即可得到中序遍历的迭代版本代码。<br>
 代码如下:</p>
@@ -295,11 +302,11 @@
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><ol start="3">
-<li>后序(PostOrder)</li>
+<li><strong>后序(PostOrder)</strong></li>
 </ol>
 <p>  类比前序和中序遍历, 后序遍历则是第三次遇到该结点时对其进行访问。但是这就出现了一个问题: <strong>如何判断是否是第三次遇到?</strong><br>
-在前序和中序遍历中, 第一次遇到结点时(入栈)、第二次遇到结点时(出栈), 但是在后序遍历, 第二次遇到时不能出栈, 第三次遇到才可用出栈, 所以第二次和第三次遇到结点的情况变得难以区分。<br>
-在递归方法中, 第三次遇到结点是在访问了其右子树<strong>根节点</strong>后, 因此在迭代版本中可以记录前一个访问的结点<em>pre</em>, 判断是否是第三次遇到结点即可转换为判断pre是否是其右子树根结点。当访问了一个新的结点时, 将<em>pre</em>更新为该结点。另外, 即使<em>pre</em>不是其右子树根结点, 若其右子树为空, 我们也可以视作第三次遇到该结点。<br>
+  在前序和中序遍历中, 第一次遇到结点时(入栈)、第二次遇到结点时(出栈), 但是在后序遍历, 第二次遇到时不能出栈, 第三次遇到才可用出栈, 所以第二次和第三次遇到结点的情况变得难以区分。<br>
+  在递归方法中, 第三次遇到结点是在访问了其右子树<strong>根节点</strong>后, 因此在迭代版本中可以记录前一个访问的结点<em>pre</em>, 判断是否是第三次遇到结点即可转换为判断pre是否是其右子树根结点。当访问了一个新的结点时, 将<em>pre</em>更新为该结点。另外, 即使<em>pre</em>不是其右子树根结点, 若其右子树为空, 我们也可以视作第三次遇到该结点。<br>
 代码如下:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">postorderTraversal</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
