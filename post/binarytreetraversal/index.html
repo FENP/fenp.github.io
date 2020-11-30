@@ -9,7 +9,7 @@
   
   
   
-  
+  <link rel="prev" href="https://fenp.github.io/post/slow_and_fast_pointer/" />
   
   <link rel="canonical" href="https://fenp.github.io/post/binarytreetraversal/" />
   <link rel='shortcut icon' type='image/x-icon' href='/img/favicon.ico' />
@@ -47,7 +47,7 @@
     "articleSection" : "post",
     "name" : "二叉树的遍历",
     "headline" : "二叉树的遍历",
-    "description" : "二叉树是一种重要的树形数据结构, 对其遍历的方式有以下几种: 前序\n中序\n后序\n每一种遍历方式都有递归 与 非递归两种, 本文使用java分别进行实现\n  二叉树的数据结构定义如下  class TreeNode { int val; TreeNode left; TreeNode right; TreeNode() {} TreeNode(int val) { this.val = val; } TreeNode(int val, TreeNode left, TreeNode right) { this.val = val; this.left = left; this.right = right; } }  二叉树的遍历    递归 递归版本简单易懂, 注意递归顺序\n   前序(PreOrder)  class Solution { public List\u0026lt;Integer\u0026gt; preorderTraversal(TreeNode root) { List\u0026lt;Integer\u0026gt; ans = new ArrayList\u0026lt;Integer\u0026gt;(); preOrder(root, ans); return ans; } private void preOrder(TreeNode root, List\u0026lt;Integer\u0026gt; ans){ if(root == null) return; ans.",
+    "description" : "二叉树是一种重要的树形数据结构, 对其遍历的方式有以下几种: 前序\n中序\n后序\n每一种遍历方式都有递归 与 非递归两种, 本文使用java分别进行实现。\n本文阅读完成后请回答一下上图红色数字的含义及其与前、中、后序遍历的关系。\n  二叉树的数据结构定义如下  class TreeNode { int val; TreeNode left; TreeNode right; TreeNode() {} TreeNode(int val) { this.val = val; } TreeNode(int val, TreeNode left, TreeNode right) { this.val = val; this.left = left; this.right = right; } }  二叉树的遍历    递归 递归版本简单易懂, 注意递归顺序\n   前序(PreOrder)  class Solution { public List\u0026lt;Integer\u0026gt; preorderTraversal(TreeNode root) { List\u0026lt;Integer\u0026gt; ans = new ArrayList\u0026lt;Integer\u0026gt;(); preOrder(root, ans); return ans; } private void preOrder(TreeNode root, List\u0026lt;Integer\u0026gt; ans){ if(root == null) return; ans.",
     "inLanguage" : "en-us",
     "author" : "JayaYuan",
     "creator" : "JayaYuan",
@@ -58,8 +58,8 @@
     "datePublished": "2020-10-27 16:48:51 \u002b0800 CST",
     "dateModified" : "2020-10-27 16:48:51 \u002b0800 CST",
     "url" : "https:\/\/fenp.github.io\/post\/binarytreetraversal\/",
-    "wordCount" : "387",
-    "keywords" : [ "二叉树", "JayaYuan"]
+    "wordCount" : "388",
+    "keywords" : [ "二叉树","遍历", "JayaYuan"]
 }
 </script>
 
@@ -137,6 +137,7 @@
 
         
 
+        <img src="/images/binary_tree_traversal.png" class="featured_image">
         
         
      
@@ -153,7 +154,8 @@
 <p><a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/">前序</a><br>
 <a href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/">中序</a><br>
 <a href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/">后序</a><br>
-每一种遍历方式都有<em><strong>递归</strong></em> 与 <em><strong>非递归</strong></em>两种, 本文使用java分别进行实现</p>
+每一种遍历方式都有<em><strong>递归</strong></em> 与 <em><strong>非递归</strong></em>两种, 本文使用java分别进行实现。<br>
+<strong>本文阅读完成后请回答一下上图红色数字的含义及其与前、中、后序遍历的关系。</strong></p>
 </blockquote>
 <blockquote>
 <h3 id="二叉树的数据结构定义如下">二叉树的数据结构定义如下</h3>
@@ -369,6 +371,9 @@
             <span class="tag"><a href="https://fenp.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
                     #二叉树</a></span>
             
+            <span class="tag"><a href="https://fenp.github.io/tags/%E9%81%8D%E5%8E%86/">
+                    #遍历</a></span>
+            
             </section>
         
         <section>
@@ -378,6 +383,8 @@
     </div>
 
     <div class="post-nav">
+        
+        <a href="https://fenp.github.io/post/slow_and_fast_pointer/" class="prev" rel="prev" title="快慢指针"><i class="iconfont icon-left"></i>&nbsp;快慢指针</a>
          
         
     </div>
