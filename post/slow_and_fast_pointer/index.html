@@ -13,6 +13,7 @@
   <link rel="next" href="https://fenp.github.io/post/binarytreetraversal/" />
 
   
+  
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JSEGC7TY9Y"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -21,6 +22,7 @@
 
     gtag('config', 'G-JSEGC7TY9Y');
   </script>
+  
   
   <link rel="canonical" href="https://fenp.github.io/post/slow_and_fast_pointer/" />
   <link rel='shortcut icon' type='image/x-icon' href='/img/favicon.ico' />
@@ -169,7 +171,7 @@
 <blockquote>
 <h3 id="链表结构">链表结构</h3>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ListNode</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ListNode</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">int</span> val<span style="color:#f92672">;</span>
     ListNode next<span style="color:#f92672">;</span>
     ListNode<span style="color:#f92672">()</span> <span style="color:#f92672">{}</span>
@@ -186,7 +188,7 @@
 </blockquote>
 <h4 id="找n等分点">找n等分点</h4>
 <p>  n = 2是最常见的情况(即寻找链表的中点), 这是解决许多问题的第一步(如: <a href="https://leetcode-cn.com/problems/reorder-list/">No.143</a>、<a href="https://leetcode-cn.com/problems/sort-list/">No.148</a>)。我常用的寻找2等分点代码如下(<em>java</em>):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ListNode slow <span style="color:#f92672">=</span> head<span style="color:#f92672">,</span> fast <span style="color:#f92672">=</span> head<span style="color:#f92672">;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ListNode slow <span style="color:#f92672">=</span> head<span style="color:#f92672">,</span> fast <span style="color:#f92672">=</span> head<span style="color:#f92672">;</span>
 <span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>fast<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">!=</span> tail <span style="color:#f92672">&amp;&amp;</span> fast<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">.</span><span style="color:#a6e22e">next</span> <span style="color:#f92672">!=</span> tail<span style="color:#f92672">){</span>
     slow <span style="color:#f92672">=</span> slow<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">;</span>
     fast <span style="color:#f92672">=</span> fast<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">;</span>
@@ -196,7 +198,7 @@
 <img src="../images/SF_E.png" alt="偶数结点"></p>
 <h4 id="判环">判环</h4>
 <p>  快慢指针的另一个重要用法就是判断链表中是否有环路(如: <a href="https://leetcode-cn.com/problems/linked-list-cycle/">No.141</a>)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">hasCycle</span><span style="color:#f92672">(</span>ListNode head<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
         <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>head <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
             <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
@@ -215,7 +217,7 @@
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>  进一步的, 利用快慢指针还可以找到链表开始入环的第一个节点(<a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/">N0.142</a>)。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">public</span> ListNode <span style="color:#a6e22e">detectCycle</span><span style="color:#f92672">(</span>ListNode head<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
         <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>head <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
             <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
@@ -238,7 +240,7 @@
         <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><p>  至于为什么这样可以找到入环的第一个结点, 这里不再详。<br>
+</code></pre></div><p>  至于为什么这样可以找到入环的第一个结点, 这里不再详述。<br>
 提醒两个关键点:</p>
 <ul>
 <li><strong>fast走过的路程是slow走过路程的两倍</strong></li>
@@ -307,7 +309,7 @@
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2020 - 2020</span>
+        <span itemprop="copyrightYear">2020 - 2021</span>
         
         <span class="with-love">
     	 <i class="iconfont icon-love"></i> 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>“数学” on JayaYuan</title>
+    <link>https://fenp.github.io/tags/%E6%95%B0%E5%AD%A6/</link>
+    <description>Recent content in “数学” on JayaYuan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Sep 2021 18:35:20 +0800</lastBuildDate><atom:link href="https://fenp.github.io/tags/%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>分解质因数</title>
+      <link>https://fenp.github.io/post/primefactorization/</link>
+      <pubDate>Mon, 20 Sep 2021 18:35:20 +0800</pubDate>
+      
+      <guid>https://fenp.github.io/post/primefactorization/</guid>
+      <description> 算术基本定理：任何一个大于1的自然数 N，如果N不为质数，那么N可以唯一分解成有限个质数的乘积
+ List&amp;lt;Integer&amp;gt; primeFactorization(int n) { // 分解得到的质数列表（不去重）  List&amp;lt;Integer&amp;gt; res = new ArrayList&amp;lt;Integer&amp;gt;(); /* 短除法：从最小的质数开始分解 */ for (int i = 2; i * i &amp;lt;= n; i++) { // 判断n（即模余数）是否为质数只需要遍历到sqrt(n)  while (n % i == 0) { res.add(i); n /= i; } } return res; } </description>
+    </item>
+    
+  </channel>
+</rss>

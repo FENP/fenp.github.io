@@ -5,8 +5,17 @@
     <description>Recent content in JayaYuan on JayaYuan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Oct 2020 16:48:51 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 20 Sep 2021 18:35:20 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Posts</title>
+      <link>https://fenp.github.io/post/</link>
+      <pubDate>Mon, 20 Sep 2021 18:35:20 +0800</pubDate>
+      
+      <guid>https://fenp.github.io/post/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>关于</title>
@@ -17,15 +26,6 @@
       <description>&lt;p&gt;  大学四年，临近毕业发现自己上了个寂寞，学的东西很少，忘的东西很多；会的东西很少，错的东西很多。以此开设博客，记录一些值得记录的知识。&lt;strong&gt;希望这个博客可以督促我学习&lt;/strong&gt;👏 (&lt;del&gt;大概率不会&lt;/del&gt;)。&lt;/p&gt;
 &lt;p&gt;  最近在做力扣每日一题，打算通过做题复习一下基础的数据结构和算法知识，顺带学习一下java(因为发现自己一门能吃饭的语言都不会😭)。&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Posts</title>
-      <link>https://fenp.github.io/post/</link>
-      <pubDate>Tue, 27 Oct 2020 16:48:51 +0800</pubDate>
-      
-      <guid>https://fenp.github.io/post/</guid>
-      <description></description>
     </item>
     
     <item>

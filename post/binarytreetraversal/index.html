@@ -10,8 +10,9 @@
   
   
   <link rel="prev" href="https://fenp.github.io/post/slow_and_fast_pointer/" />
-  
+  <link rel="next" href="https://fenp.github.io/post/primefactorization/" />
 
+  
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JSEGC7TY9Y"></script>
   <script>
@@ -21,6 +22,7 @@
 
     gtag('config', 'G-JSEGC7TY9Y');
   </script>
+  
   
   <link rel="canonical" href="https://fenp.github.io/post/binarytreetraversal/" />
   <link rel='shortcut icon' type='image/x-icon' href='/img/favicon.ico' />
@@ -171,7 +173,7 @@
 <blockquote>
 <h3 id="二叉树的数据结构定义如下">二叉树的数据结构定义如下</h3>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TreeNode</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TreeNode</span> <span style="color:#f92672">{</span>
 	<span style="color:#66d9ef">int</span> val<span style="color:#f92672">;</span>
     TreeNode left<span style="color:#f92672">;</span>
     TreeNode right<span style="color:#f92672">;</span>
@@ -197,7 +199,7 @@
 <ol>
 <li><strong>前序(PreOrder)</strong></li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">preorderTraversal</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
         List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> ans <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;();</span>
         preOrder<span style="color:#f92672">(</span>root<span style="color:#f92672">,</span> ans<span style="color:#f92672">);</span>
@@ -215,7 +217,7 @@
 </code></pre></div><ol start="2">
 <li><strong>中序(InOrder)</strong></li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">inorderTraversal</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
         List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> ans <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;();</span>
         inOrder<span style="color:#f92672">(</span>root<span style="color:#f92672">,</span> ans<span style="color:#f92672">);</span>
@@ -233,7 +235,7 @@
 </code></pre></div><ol start="3">
 <li><strong>后序(PostOrder)</strong></li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">postorderTraversal</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
         List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> ans <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;();</span>
         postOrder<span style="color:#f92672">(</span>root<span style="color:#f92672">,</span> ans<span style="color:#f92672">);</span>
@@ -263,7 +265,7 @@
 <li>左子树访问完成后对其右子树进行递归访问</li>
 </ul>
 <p>  注意到在访问右子树时, 我们是从左子树访问结束回到了当前结点, 因此对已经遇到一次的结点，我们后续仍旧需要该结点的信息(访问右子树)。因此我们需要一个栈来保存已经遇到一次的结点(对应于递归时的递归栈):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Deque<span style="color:#f92672">&lt;</span>TreeNode<span style="color:#f92672">&gt;</span> stack <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayDeque<span style="color:#f92672">&lt;</span>TreeNode<span style="color:#f92672">&gt;();</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Deque<span style="color:#f92672">&lt;</span>TreeNode<span style="color:#f92672">&gt;</span> stack <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayDeque<span style="color:#f92672">&lt;</span>TreeNode<span style="color:#f92672">&gt;();</span>
 </code></pre></div><p><em>何时需要取出栈中的结点呢?</em><br>
 <strong>当前子树访问结束时(即迭代走不下去了, 遇到了null)</strong><br>
 此时我们需要取出栈顶结点(第二次遇到), 对其右子树进行迭代访问<br>
@@ -271,7 +273,7 @@
 <strong>遇到null且栈为空</strong><br>
 这时所有结点我们都已经遇到过两次了, 已经没有未访问过的结点了<br>
 最终代码如下:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">preorderTraversal</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
         List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> ans <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;();</span>
         Deque<span style="color:#f92672">&lt;</span>TreeNode<span style="color:#f92672">&gt;</span> stack <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayDeque<span style="color:#f92672">&lt;</span>TreeNode<span style="color:#f92672">&gt;();</span>
@@ -295,7 +297,7 @@
 </ol>
 <p>  中序和前序的区别在于: <strong>前序在第一次遇到结点时就访问, 中序则为第二次遇到结点时才访问</strong>。因而只要对前序遍历的迭代版本代码稍作改动即可得到中序遍历的迭代版本代码。<br>
 代码如下:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">preorderTraversal</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
         List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> ans <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;();</span>
         Deque<span style="color:#f92672">&lt;</span>TreeNode<span style="color:#f92672">&gt;</span> stack <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayDeque<span style="color:#f92672">&lt;</span>TreeNode<span style="color:#f92672">&gt;();</span>
@@ -321,7 +323,7 @@
   在前序和中序遍历中, 第一次遇到结点时(入栈)、第二次遇到结点时(出栈), 但是在后序遍历, 第二次遇到时不能出栈, 第三次遇到才可用出栈, 所以第二次和第三次遇到结点的情况变得难以区分。<br>
   在递归方法中, 第三次遇到结点是在访问了其右子树<strong>根节点</strong>后, 因此在迭代版本中可以记录前一个访问的结点<em>pre</em>, 判断是否是第三次遇到结点即可转换为判断pre是否是其右子树根结点。当访问了一个新的结点时, 将<em>pre</em>更新为该结点。另外, 即使<em>pre</em>不是其右子树根结点, 若其右子树为空, 我们也可以视作第三次遇到该结点。<br>
 代码如下:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">postorderTraversal</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
         List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> ans <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;();</span>
         <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
@@ -398,6 +400,8 @@
         <a href="https://fenp.github.io/post/slow_and_fast_pointer/" class="prev" rel="prev" title="快慢指针"><i class="iconfont icon-left"></i>&nbsp;快慢指针</a>
          
         
+        <a href="https://fenp.github.io/post/primefactorization/" class="next" rel="next" title="分解质因数">分解质因数&nbsp;<i class="iconfont icon-right"></i></a>
+        
     </div>
 
     <div class="post-comment">
@@ -412,7 +416,7 @@
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2020 - 2020</span>
+        <span itemprop="copyrightYear">2020 - 2021</span>
         
         <span class="with-love">
     	 <i class="iconfont icon-love"></i> 

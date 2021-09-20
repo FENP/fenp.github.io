@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>算法 on JayaYuan</title>
+    <title>“算法” on JayaYuan</title>
     <link>https://fenp.github.io/categories/%E7%AE%97%E6%B3%95/</link>
-    <description>Recent content in 算法 on JayaYuan</description>
+    <description>Recent content in “算法” on JayaYuan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Oct 2020 21:26:02 +0800</lastBuildDate><atom:link href="https://fenp.github.io/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Sep 2021 18:35:20 +0800</lastBuildDate><atom:link href="https://fenp.github.io/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>分解质因数</title>
+      <link>https://fenp.github.io/post/primefactorization/</link>
+      <pubDate>Mon, 20 Sep 2021 18:35:20 +0800</pubDate>
+      
+      <guid>https://fenp.github.io/post/primefactorization/</guid>
+      <description> 算术基本定理：任何一个大于1的自然数 N，如果N不为质数，那么N可以唯一分解成有限个质数的乘积
+ List&amp;lt;Integer&amp;gt; primeFactorization(int n) { // 分解得到的质数列表（不去重）  List&amp;lt;Integer&amp;gt; res = new ArrayList&amp;lt;Integer&amp;gt;(); /* 短除法：从最小的质数开始分解 */ for (int i = 2; i * i &amp;lt;= n; i++) { // 判断n（即模余数）是否为质数只需要遍历到sqrt(n)  while (n % i == 0) { res.add(i); n /= i; } } return res; } </description>
+    </item>
+    
     <item>
       <title>快慢指针</title>
       <link>https://fenp.github.io/post/slow_and_fast_pointer/</link>

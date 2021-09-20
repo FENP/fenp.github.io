@@ -9,7 +9,7 @@
   
   
   
-  <link rel="prev" href="https://fenp.github.io/archives/" />
+  <link rel="prev" href="https://fenp.github.io/post/binarytreetraversal/" />
   
 
   
@@ -24,7 +24,7 @@
   </script>
   
   
-  <link rel="canonical" href="https://fenp.github.io/about/" />
+  <link rel="canonical" href="https://fenp.github.io/post/primefactorization/" />
   <link rel='shortcut icon' type='image/x-icon' href='/img/favicon.ico' />
   <link rel="apple-touch-icon" sizes="128x128" href="/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
@@ -36,10 +36,10 @@
   <title>
        
        
-           关于 | JayaYuan
+           分解质因数 | JayaYuan
        
   </title>
-  <meta name="title" content="关于 | JayaYuan">
+  <meta name="title" content="分解质因数 | JayaYuan">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -57,22 +57,22 @@
          "@type": "WebPage",
          "@id": "https:\/\/fenp.github.io"
     },
-    "articleSection" : "",
-    "name" : "关于",
-    "headline" : "关于",
-    "description" : "About me and this blog",
+    "articleSection" : "post",
+    "name" : "分解质因数",
+    "headline" : "分解质因数",
+    "description" : " 算术基本定理：任何一个大于1的自然数 N，如果N不为质数，那么N可以唯一分解成有限个质数的乘积\n List\u0026lt;Integer\u0026gt; primeFactorization(int n) { \/\/ 分解得到的质数列表（不去重）  List\u0026lt;Integer\u0026gt; res = new ArrayList\u0026lt;Integer\u0026gt;(); \/* 短除法：从最小的质数开始分解 *\/ for (int i = 2; i * i \u0026lt;= n; i\u002b\u002b) { \/\/ 判断n（即模余数）是否为质数只需要遍历到sqrt(n)  while (n % i == 0) { res.add(i); n \/= i; } } return res; } ",
     "inLanguage" : "en-us",
     "author" : "JayaYuan",
     "creator" : "JayaYuan",
     "publisher": "JayaYuan",
     "accountablePerson" : "JayaYuan",
     "copyrightHolder" : "JayaYuan",
-    "copyrightYear" : "2020",
-    "datePublished": "2020-10-28 00:00:00 \u002b0000 UTC",
-    "dateModified" : "2020-10-28 00:00:00 \u002b0000 UTC",
-    "url" : "https:\/\/fenp.github.io\/about\/",
-    "wordCount" : "3",
-    "keywords" : [  "JayaYuan"]
+    "copyrightYear" : "2021",
+    "datePublished": "2021-09-20 18:35:20 \u002b0800 CST",
+    "dateModified" : "2021-09-20 18:35:20 \u002b0800 CST",
+    "url" : "https:\/\/fenp.github.io\/post\/primefactorization\/",
+    "wordCount" : "46",
+    "keywords" : [ "“数学”", "JayaYuan"]
 }
 </script>
 
@@ -131,14 +131,17 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">关于</h1>
+        <h1 class="post-title" itemprop="name headline">分解质因数</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://fenp.github.io" rel="author">JayaYuan</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2020-10-28 itemprop="datePublished">October 28, 2020</time>
+                on <time datetime=2021-09-20 itemprop="datePublished">September 20, 2021</time>
                 </span>
                 in
-                
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        
+                </span>
         </div>
     </header>
     <div class="post-content">
@@ -157,9 +160,24 @@
           
           
 
-          <p>  大学四年，临近毕业发现自己上了个寂寞，学的东西很少，忘的东西很多；会的东西很少，错的东西很多。以此开设博客，记录一些值得记录的知识。<strong>希望这个博客可以督促我学习</strong>👏 (<del>大概率不会</del>)。</p>
-<p>  最近在做力扣每日一题，打算通过做题复习一下基础的数据结构和算法知识，顺带学习一下java(因为发现自己一门能吃饭的语言都不会😭)。</p>
-
+          <blockquote>
+<p><strong>算术基本定理</strong>：任何一个大于1的自然数 N，如果N不为质数，那么N可以唯一分解成有限个质数的乘积</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">primeFactorization</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> n<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">// 分解得到的质数列表（不去重）
+</span><span style="color:#75715e"></span>    List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> res <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;();</span>
+    
+    <span style="color:#75715e">/* 短除法：从最小的质数开始分解 */</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 2<span style="color:#f92672">;</span> i <span style="color:#f92672">*</span> i <span style="color:#f92672">&lt;=</span> n<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// 判断n（即模余数）是否为质数只需要遍历到sqrt(n)
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>n <span style="color:#f92672">%</span> i <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            res<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>i<span style="color:#f92672">);</span>
+            n <span style="color:#f92672">/=</span> i<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">return</span> res<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div>
     </div>
 
     <div class="post-copyright">
@@ -173,7 +191,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://fenp.github.io/about/>https://fenp.github.io/about/</span>
+                    <a href=https://fenp.github.io/post/primefactorization/>https://fenp.github.io/post/primefactorization/</span>
             </p>
             
              
@@ -186,6 +204,14 @@
   
     <div class="post-tags">
         
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://fenp.github.io/tags/%E6%95%B0%E5%AD%A6/">
+                    #“数学”</a></span>
+            
+            </section>
+        
         <section>
                 <a href="javascript:window.history.back();">back</a></span> · 
                 <span><a href="https://fenp.github.io">home</a></span>
@@ -194,7 +220,7 @@
 
     <div class="post-nav">
         
-        <a href="https://fenp.github.io/archives/" class="prev" rel="prev" title="Archives"><i class="iconfont icon-left"></i>&nbsp;Archives</a>
+        <a href="https://fenp.github.io/post/binarytreetraversal/" class="prev" rel="prev" title="二叉树的遍历"><i class="iconfont icon-left"></i>&nbsp;二叉树的遍历</a>
          
         
     </div>
