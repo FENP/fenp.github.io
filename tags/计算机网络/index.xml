@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机网络 on JayaYuan</title>
+    <link>https://fenp.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+    <description>Recent content in 计算机网络 on JayaYuan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 07 Oct 2021 16:07:22 +0800</lastBuildDate><atom:link href="https://fenp.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简要概述TCP/IP模型、SSL/TLS/HTTPS协议以及SSL证书</title>
+      <link>https://fenp.github.io/post/httpswithssltls/</link>
+      <pubDate>Thu, 07 Oct 2021 16:07:22 +0800</pubDate>
+      
+      <guid>https://fenp.github.io/post/httpswithssltls/</guid>
+      <description>原文链接：A brief overview of the TCP/IP model, SSL/TLS/HTTPS protocols and SSL certificates
+在本文中，我们将了解基于SSL/TLS协议的Web加密和Web安全如何工作。我们还将了解SSL证书的结构，以及如何生成一个供自己使用的自签名证书。
+我现在正在写一篇关于如何用Go（golang）创建一个安全的HTTP服务器的文章。我想没有比这更好的机会来探讨这个关于Web安全的广泛话题了。
+本文，我们将广泛讨论SSL/TLS通信、HTTP协议、因特网数据包、SSL证书和其他web/因特网的基本特征。虽然它们并没有在我们日常的网络开发生活中出现，但是我们绝对应该了解它们。
+ 因特网是如何工作的？ 我可以用一句话回答这个问题，或者说，我们也可以在这谈论几个小时。不过我想让事情变的简单易懂。
+因特网就是分布在世界各地，将不同设备互相连接起来的电网线。即使您没有看到实体的电线，但是您依旧可以想象您的智能手机通过虚拟电线连接到WiFi路由器，让您与位于您几英里之外的谷歌服务器对话。
+当您想通过因特网向和您的个人设备连接的设备发送一些数据时，您需要遵守一些规则。所有在因特网上传递的数据都是由0和1组成的二进制数据。
+ 首先，用于发送数据的应用程序需要与设备上的硬件通信，以便在因特网上发送数据。同样，设备上的硬件需要与在因特网上实际传输数据的设备（如WiFi路由器）进行通信。 当您给一个人寄信时，您会在信上标明收信人的地址，这样信就能送到正确的人手中。同样地，当您在因特网上发送一些数据时，您需要知道最终接收这些数据的设备的地址。 当一个网络应用程序在设备中启动（如Web浏览器或Web服务器）来传输或接收数据时，它将在一个端口上监听因特网数据，如8080。发送方需要知道接收方设备的端口，以便数据被正确的应用程序接收，而不是其他可能将其滥用的应用程序。  💡这些端口是由操作系统随机分配的，但是我们可以迫使操作系统将应用程序绑定到一个特定的端口上。
+接收到数据的设备将无法理解它，除非它事先知道它在看什么。这个数据可能是一张图片、一首歌、一条简单的文本消息或者一个HTML文档。因此我们需要告诉接收者数据的类型，以便它可以正确理解数据。  这四个步骤描述了在因特网上进行数据传输的通信模型。其中每一步都由一个协议定义。根据协议的类型，每一步都会对数据进行相应的格式化，这样接收方就能够正确地提取数据了。
+💡根据数据传输的用例，在一个特定的模型中可能有更多的步骤。您可以阅读OSI模型。任何人都可以用这个模型在因特网或局域网（LAN）上传输数据。
+如果我们仔细审视这些步骤，我们会发现它们形成了一个管道：来自一个步骤的数据被发送到另一个步骤进行下一步处理，直到它在因特网上传递。然而，层可能是描述这些步骤的最合适的词汇，我们马上就会知道为什么。
+TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）是我们前面看到的通信模型中的传输层协议，而因特网协议（Internet Protocol，IP）是网络层协议。
+这些协议共同推动了大部分的因特网通信。此时此刻，您的浏览器正在使用 TCP/IP 模型从服务器加载此网页。因此，这些协议共同构成了因特网协议套件 （internet protocol suite），如下图所示（图源维基百科）。
+在上述通信模型中（左侧），应用层从源（如内部存储或 RAM）获取数据并用特定协议（如HTTP）的一些标头将其包装。这会创建一个 HTTP 协议的数据包，并且可以被像 Web 浏览器一样理解它的应用程序读取。
+这个HTTP包将会被发送到传输层。传输层使用 TCP 协议标头以及源端口和目标端口包装数据包。源端口是传输数据的应用程序的端口（如 Web 浏览器），目标端口是运行在接收端的应用程序接收数据的端口。 TCP 包被网络层接收，它用源和目标 IP 地址以及 IP 协议标头将其包装。源IP地址是发送方设备的IP地址，目标地址是接收方设备的IP地址。
+💡IP 地址是分配给因特网上设备的唯一编号。您可以阅读有关 IPV4 和 IPV6 IP 地址格式获得更多信息。设备的 IP 地址可以在数据传输之前就知道，也可以使用 HTTP 标头中包含的域名从DNS服务器解析。</description>
+    </item>
+    
+  </channel>
+</rss>
