@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>指针 on JayaYuan</title>
-    <link>https://fenp.github.io/tags/%E6%8C%87%E9%92%88/</link>
-    <description>Recent content in 指针 on JayaYuan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 25 Oct 2020 21:26:02 +0800</lastBuildDate><atom:link href="https://fenp.github.io/tags/%E6%8C%87%E9%92%88/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>快慢指针</title>
-      <link>https://fenp.github.io/post/slow_and_fast_pointer/</link>
-      <pubDate>Sun, 25 Oct 2020 21:26:02 +0800</pubDate>
-      
-      <guid>https://fenp.github.io/post/slow_and_fast_pointer/</guid>
-      <description>什么是快慢指针  在链表中使用两个指针，其中一个指针的移动速度比另外一个指针移动的速度快，这就是快慢指针。借助两个指针产生的距离差值，快慢指针有妙用。
-  链表结构  public class ListNode { int val; ListNode next; ListNode() {} ListNode(int val) { this.val = val; } ListNode(int val, ListNode next) { this.val = val; this.next = next; } }  快慢指针的妙用  找n等分点  n = 2是最常见的情况(即寻找链表的中点), 这是解决许多问题的第一步(如: No.143、No.148)。我常用的寻找2等分点代码如下(java):
-ListNode slow = head, fast = head; while(fast.next != tail &amp;amp;&amp;amp; fast.next.next != tail){ slow = slow.next; fast = fast.next.next; }  在上述代码执行完成后, slow指针指向了链表的中间结点或中间两个结点的左结点。</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>指针 - Tag - JayaYuan&#39;s Blog</title>
+        <link>https://example.com/tags/%E6%8C%87%E9%92%88/</link>
+        <description>指针 - Tag - JayaYuan&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>jayayuan@outlook.com (JayaYuan)</managingEditor>
+            <webMaster>jayayuan@outlook.com (JayaYuan)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 25 Oct 2020 21:26:02 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/%E6%8C%87%E9%92%88/" rel="self" type="application/rss+xml" /><item>
+    <title>快慢指针</title>
+    <link>https://example.com/slow_and_fast_pointer/</link>
+    <pubDate>Sun, 25 Oct 2020 21:26:02 &#43;0800</pubDate>
+    <author>JayaYuan</author>
+    <guid>https://example.com/slow_and_fast_pointer/</guid>
+    <description><![CDATA[什么是快慢指针 在链表中使用两个指针，其中一个指针的移动速度比另外一个指针移动的速度快，这就是快慢指针。借助两个指针产生的距离差值，快慢指针有妙用。
+链表结构 1 2 3 4 5 6 7 8 9 10 11 12 public class ListNode { int val; ListNode next; ListNode() {} ListNode(int val) { this.val = val; } ListNode(int val, ListNode next) { this.val = val; this.next = next; } } 快慢指针的妙用 找n等分点 n = 2是最常见的情况(即寻找链表的中点), 这是解决许多问题的第一步(如: No.143、No.148)。我常用的寻找2等分点代码如下(java):
+1 2 3 4 5 ListNode slow = head, fast = head; while(fast.next != tail &amp;&amp; fast.next.next !]]></description>
+</item>
+</channel>
 </rss>

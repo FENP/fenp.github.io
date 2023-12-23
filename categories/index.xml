@@ -1,47 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Categories on JayaYuan</title>
-    <link>https://fenp.github.io/categories/</link>
-    <description>Recent content in Categories on JayaYuan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 07 Oct 2021 16:07:22 +0800</lastBuildDate><atom:link href="https://fenp.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>翻译</title>
-      <link>https://fenp.github.io/categories/%E7%BF%BB%E8%AF%91/</link>
-      <pubDate>Thu, 07 Oct 2021 16:07:22 +0800</pubDate>
-      
-      <guid>https://fenp.github.io/categories/%E7%BF%BB%E8%AF%91/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>“编程贴士”</title>
-      <link>https://fenp.github.io/categories/%E7%BC%96%E7%A8%8B%E8%B4%B4%E5%A3%AB/</link>
-      <pubDate>Tue, 28 Sep 2021 23:01:23 +0800</pubDate>
-      
-      <guid>https://fenp.github.io/categories/%E7%BC%96%E7%A8%8B%E8%B4%B4%E5%A3%AB/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>“算法”</title>
-      <link>https://fenp.github.io/categories/%E7%AE%97%E6%B3%95/</link>
-      <pubDate>Mon, 20 Sep 2021 18:35:20 +0800</pubDate>
-      
-      <guid>https://fenp.github.io/categories/%E7%AE%97%E6%B3%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>数据结构</title>
-      <link>https://fenp.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
-      <pubDate>Tue, 27 Oct 2020 16:48:51 +0800</pubDate>
-      
-      <guid>https://fenp.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Categories - Category - JayaYuan&#39;s Blog</title>
+        <link>https://example.com/categories/</link>
+        <description>Categories - Category - JayaYuan&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>jayayuan@outlook.com (JayaYuan)</managingEditor>
+            <webMaster>jayayuan@outlook.com (JayaYuan)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 07 Oct 2021 16:07:22 &#43;0800</lastBuildDate><atom:link href="https://example.com/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>翻译</title>
+    <link>https://example.com/categories/%E7%BF%BB%E8%AF%91/</link>
+    <pubDate>Thu, 07 Oct 2021 16:07:22 &#43;0800</pubDate>
+    <author>JayaYuan</author>
+    <guid>https://example.com/categories/%E7%BF%BB%E8%AF%91/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>编程贴士</title>
+    <link>https://example.com/categories/%E7%BC%96%E7%A8%8B%E8%B4%B4%E5%A3%AB/</link>
+    <pubDate>Tue, 28 Sep 2021 23:01:23 &#43;0800</pubDate>
+    <author>JayaYuan</author>
+    <guid>https://example.com/categories/%E7%BC%96%E7%A8%8B%E8%B4%B4%E5%A3%AB/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>算法</title>
+    <link>https://example.com/categories/%E7%AE%97%E6%B3%95/</link>
+    <pubDate>Mon, 20 Sep 2021 18:35:20 &#43;0800</pubDate>
+    <author>JayaYuan</author>
+    <guid>https://example.com/categories/%E7%AE%97%E6%B3%95/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>数据结构</title>
+    <link>https://example.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+    <pubDate>Tue, 27 Oct 2020 16:48:51 &#43;0800</pubDate>
+    <author>JayaYuan</author>
+    <guid>https://example.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
 </rss>

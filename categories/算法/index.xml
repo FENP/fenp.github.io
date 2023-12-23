@@ -1,32 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>“算法” on JayaYuan</title>
-    <link>https://fenp.github.io/categories/%E7%AE%97%E6%B3%95/</link>
-    <description>Recent content in “算法” on JayaYuan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 20 Sep 2021 18:35:20 +0800</lastBuildDate><atom:link href="https://fenp.github.io/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>分解质因数</title>
-      <link>https://fenp.github.io/post/primefactorization/</link>
-      <pubDate>Mon, 20 Sep 2021 18:35:20 +0800</pubDate>
-      
-      <guid>https://fenp.github.io/post/primefactorization/</guid>
-      <description> 算术基本定理：任何一个大于1的自然数 N，如果N不为质数，那么N可以唯一分解成有限个质数的乘积
- List&amp;lt;Integer&amp;gt; primeFactorization(int n) { // 分解得到的质数列表（不去重）  List&amp;lt;Integer&amp;gt; res = new ArrayList&amp;lt;Integer&amp;gt;(); /* 短除法：从最小的质数开始分解 */ for (int i = 2; i * i &amp;lt;= n; i++) { // 判断n（即模余数）是否为质数只需要遍历到sqrt(n)  while (n % i == 0) { res.add(i); n /= i; } } return res; } </description>
-    </item>
-    
-    <item>
-      <title>快慢指针</title>
-      <link>https://fenp.github.io/post/slow_and_fast_pointer/</link>
-      <pubDate>Sun, 25 Oct 2020 21:26:02 +0800</pubDate>
-      
-      <guid>https://fenp.github.io/post/slow_and_fast_pointer/</guid>
-      <description>什么是快慢指针  在链表中使用两个指针，其中一个指针的移动速度比另外一个指针移动的速度快，这就是快慢指针。借助两个指针产生的距离差值，快慢指针有妙用。
-  链表结构  public class ListNode { int val; ListNode next; ListNode() {} ListNode(int val) { this.val = val; } ListNode(int val, ListNode next) { this.val = val; this.next = next; } }  快慢指针的妙用  找n等分点  n = 2是最常见的情况(即寻找链表的中点), 这是解决许多问题的第一步(如: No.143、No.148)。我常用的寻找2等分点代码如下(java):
-ListNode slow = head, fast = head; while(fast.next != tail &amp;amp;&amp;amp; fast.next.next != tail){ slow = slow.next; fast = fast.next.next; }  在上述代码执行完成后, slow指针指向了链表的中间结点或中间两个结点的左结点。</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>算法 - Category - JayaYuan&#39;s Blog</title>
+        <link>https://example.com/categories/%E7%AE%97%E6%B3%95/</link>
+        <description>算法 - Category - JayaYuan&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>jayayuan@outlook.com (JayaYuan)</managingEditor>
+            <webMaster>jayayuan@outlook.com (JayaYuan)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 20 Sep 2021 18:35:20 &#43;0800</lastBuildDate><atom:link href="https://example.com/categories/%E7%AE%97%E6%B3%95/" rel="self" type="application/rss+xml" /><item>
+    <title>分解质因数</title>
+    <link>https://example.com/primefactorization/</link>
+    <pubDate>Mon, 20 Sep 2021 18:35:20 &#43;0800</pubDate>
+    <author>JayaYuan</author>
+    <guid>https://example.com/primefactorization/</guid>
+    <description><![CDATA[ 算术基本定理：任何一个大于1的自然数 N，如果N不为质数，那么N可以唯一分解成有限个质数的乘积
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 List&lt;Integer&gt; primeFactorization(int n) { // 分解得到的质数列表（不去重） List&lt;Integer&gt; res = new ArrayList&lt;Integer&gt;(); /* 短除法：从最小的质数开始分解 */ for (int i = 2; i * i &lt;= n; i++) { // 判断n（即模余数）是否为质数只需要遍历到sqrt(n) while (n % i == 0) { res.add(i); n /= i; } } return res; } ]]></description>
+</item>
+<item>
+    <title>快慢指针</title>
+    <link>https://example.com/slow_and_fast_pointer/</link>
+    <pubDate>Sun, 25 Oct 2020 21:26:02 &#43;0800</pubDate>
+    <author>JayaYuan</author>
+    <guid>https://example.com/slow_and_fast_pointer/</guid>
+    <description><![CDATA[什么是快慢指针 在链表中使用两个指针，其中一个指针的移动速度比另外一个指针移动的速度快，这就是快慢指针。借助两个指针产生的距离差值，快慢指针有妙用。
+链表结构 1 2 3 4 5 6 7 8 9 10 11 12 public class ListNode { int val; ListNode next; ListNode() {} ListNode(int val) { this.val = val; } ListNode(int val, ListNode next) { this.val = val; this.next = next; } } 快慢指针的妙用 找n等分点 n = 2是最常见的情况(即寻找链表的中点), 这是解决许多问题的第一步(如: No.143、No.148)。我常用的寻找2等分点代码如下(java):
+1 2 3 4 5 ListNode slow = head, fast = head; while(fast.next != tail &amp;&amp; fast.next.next !]]></description>
+</item>
+</channel>
 </rss>

@@ -1,92 +1,72 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tags on JayaYuan</title>
-    <link>https://fenp.github.io/tags/</link>
-    <description>Recent content in Tags on JayaYuan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 07 Oct 2021 16:07:22 +0800</lastBuildDate><atom:link href="https://fenp.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>HTTPS</title>
-      <link>https://fenp.github.io/tags/https/</link>
-      <pubDate>Thu, 07 Oct 2021 16:07:22 +0800</pubDate>
-      
-      <guid>https://fenp.github.io/tags/https/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>计算机网络</title>
-      <link>https://fenp.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
-      <pubDate>Thu, 07 Oct 2021 16:07:22 +0800</pubDate>
-      
-      <guid>https://fenp.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>“C语言”</title>
-      <link>https://fenp.github.io/tags/c%E8%AF%AD%E8%A8%80/</link>
-      <pubDate>Tue, 28 Sep 2021 23:01:23 +0800</pubDate>
-      
-      <guid>https://fenp.github.io/tags/c%E8%AF%AD%E8%A8%80/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>“数学”</title>
-      <link>https://fenp.github.io/tags/%E6%95%B0%E5%AD%A6/</link>
-      <pubDate>Mon, 20 Sep 2021 18:35:20 +0800</pubDate>
-      
-      <guid>https://fenp.github.io/tags/%E6%95%B0%E5%AD%A6/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>二叉树</title>
-      <link>https://fenp.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
-      <pubDate>Tue, 27 Oct 2020 16:48:51 +0800</pubDate>
-      
-      <guid>https://fenp.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>遍历</title>
-      <link>https://fenp.github.io/tags/%E9%81%8D%E5%8E%86/</link>
-      <pubDate>Tue, 27 Oct 2020 16:48:51 +0800</pubDate>
-      
-      <guid>https://fenp.github.io/tags/%E9%81%8D%E5%8E%86/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>指针</title>
-      <link>https://fenp.github.io/tags/%E6%8C%87%E9%92%88/</link>
-      <pubDate>Sun, 25 Oct 2020 21:26:02 +0800</pubDate>
-      
-      <guid>https://fenp.github.io/tags/%E6%8C%87%E9%92%88/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>链表</title>
-      <link>https://fenp.github.io/tags/%E9%93%BE%E8%A1%A8/</link>
-      <pubDate>Sun, 25 Oct 2020 21:26:02 +0800</pubDate>
-      
-      <guid>https://fenp.github.io/tags/%E9%93%BE%E8%A1%A8/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>TCP/IP</title>
-      <link>https://fenp.github.io/tags/tcp/ip/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fenp.github.io/tags/tcp/ip/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - Tag - JayaYuan&#39;s Blog</title>
+        <link>https://example.com/tags/</link>
+        <description>Tags - Tag - JayaYuan&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>jayayuan@outlook.com (JayaYuan)</managingEditor>
+            <webMaster>jayayuan@outlook.com (JayaYuan)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 07 Oct 2021 16:07:22 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>HTTPS</title>
+    <link>https://example.com/tags/https/</link>
+    <pubDate>Thu, 07 Oct 2021 16:07:22 &#43;0800</pubDate>
+    <author>JayaYuan</author>
+    <guid>https://example.com/tags/https/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>计算机网络</title>
+    <link>https://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+    <pubDate>Thu, 07 Oct 2021 16:07:22 &#43;0800</pubDate>
+    <author>JayaYuan</author>
+    <guid>https://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>C语言</title>
+    <link>https://example.com/tags/c%E8%AF%AD%E8%A8%80/</link>
+    <pubDate>Tue, 28 Sep 2021 23:01:23 &#43;0800</pubDate>
+    <author>JayaYuan</author>
+    <guid>https://example.com/tags/c%E8%AF%AD%E8%A8%80/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>数学</title>
+    <link>https://example.com/tags/%E6%95%B0%E5%AD%A6/</link>
+    <pubDate>Mon, 20 Sep 2021 18:35:20 &#43;0800</pubDate>
+    <author>JayaYuan</author>
+    <guid>https://example.com/tags/%E6%95%B0%E5%AD%A6/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>二叉树</title>
+    <link>https://example.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+    <pubDate>Tue, 27 Oct 2020 16:48:51 &#43;0800</pubDate>
+    <author>JayaYuan</author>
+    <guid>https://example.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>指针</title>
+    <link>https://example.com/tags/%E6%8C%87%E9%92%88/</link>
+    <pubDate>Sun, 25 Oct 2020 21:26:02 &#43;0800</pubDate>
+    <author>JayaYuan</author>
+    <guid>https://example.com/tags/%E6%8C%87%E9%92%88/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>链表</title>
+    <link>https://example.com/tags/%E9%93%BE%E8%A1%A8/</link>
+    <pubDate>Sun, 25 Oct 2020 21:26:02 &#43;0800</pubDate>
+    <author>JayaYuan</author>
+    <guid>https://example.com/tags/%E9%93%BE%E8%A1%A8/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>TCP/IP</title>
+    <link>https://example.com/tags/tcp/ip/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>JayaYuan</author>
+    <guid>https://example.com/tags/tcp/ip/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
 </rss>

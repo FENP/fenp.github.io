@@ -1,22 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>“编程贴士” on JayaYuan</title>
-    <link>https://fenp.github.io/categories/%E7%BC%96%E7%A8%8B%E8%B4%B4%E5%A3%AB/</link>
-    <description>Recent content in “编程贴士” on JayaYuan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 28 Sep 2021 23:01:23 +0800</lastBuildDate><atom:link href="https://fenp.github.io/categories/%E7%BC%96%E7%A8%8B%E8%B4%B4%E5%A3%AB/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>C语言函数声明中的空参数</title>
-      <link>https://fenp.github.io/post/emptyparameterdeclarator/</link>
-      <pubDate>Tue, 28 Sep 2021 23:01:23 +0800</pubDate>
-      
-      <guid>https://fenp.github.io/post/emptyparameterdeclarator/</guid>
-      <description>函数声明：int getP()与int getP(void)  总结：函数声明时参数为空是一种陋习，这表明参数类型和数目都不明确，可能会导致UB
- #include &amp;lt;stdio.h&amp;gt; int getP();	float outF(); int main(void) { printf(&amp;#34;%d\n&amp;#34;, getP(10)); outF(10); return 0; } int getP(int a) { int ret = 1; for (int i = 0; i &amp;lt; a; i++) ret = ret &amp;lt;&amp;lt; 1; return ret; } float outF(float a) { printf(&amp;#34;%f\n&amp;#34;, a); } 其中一个可以过编译，而另一个不行
-an argument type that has a default promotion can’t match an empty parameter name list declaration</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>编程贴士 - Category - JayaYuan&#39;s Blog</title>
+        <link>https://example.com/categories/%E7%BC%96%E7%A8%8B%E8%B4%B4%E5%A3%AB/</link>
+        <description>编程贴士 - Category - JayaYuan&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>jayayuan@outlook.com (JayaYuan)</managingEditor>
+            <webMaster>jayayuan@outlook.com (JayaYuan)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 28 Sep 2021 23:01:23 &#43;0800</lastBuildDate><atom:link href="https://example.com/categories/%E7%BC%96%E7%A8%8B%E8%B4%B4%E5%A3%AB/" rel="self" type="application/rss+xml" /><item>
+    <title>C语言函数声明中的空参数</title>
+    <link>https://example.com/emptyparameterdeclarator/</link>
+    <pubDate>Tue, 28 Sep 2021 23:01:23 &#43;0800</pubDate>
+    <author>JayaYuan</author>
+    <guid>https://example.com/emptyparameterdeclarator/</guid>
+    <description><![CDATA[函数声明：int getP()与int getP(void) 总结：函数声明时参数为空是一种陋习，这表明参数类型和数目都不明确，可能会导致UB
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 #include &lt;stdio.h&gt; int getP();	float outF(); int main(void) { printf(&#34;%d\n&#34;, getP(10)); outF(10); return 0; } int getP(int a) { int ret = 1; for (int i = 0; i &lt; a; i++) ret = ret &lt;&lt; 1; return ret; } float outF(float a) { printf(&#34;%f\n&#34;, a); } 其中一个可以过编译，而另一个不行]]></description>
+</item>
+</channel>
 </rss>
