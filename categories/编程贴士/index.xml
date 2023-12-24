@@ -10,8 +10,8 @@
     <pubDate>Tue, 28 Sep 2021 23:01:23 &#43;0800</pubDate>
     <author>JayaYuan</author>
     <guid>https://example.com/emptyparameterdeclarator/</guid>
-    <description><![CDATA[函数声明：int getP()与int getP(void) 总结：函数声明时参数为空是一种陋习，这表明参数类型和数目都不明确，可能会导致UB
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 #include &lt;stdio.h&gt; int getP();	float outF(); int main(void) { printf(&#34;%d\n&#34;, getP(10)); outF(10); return 0; } int getP(int a) { int ret = 1; for (int i = 0; i &lt; a; i++) ret = ret &lt;&lt; 1; return ret; } float outF(float a) { printf(&#34;%f\n&#34;, a); } 其中一个可以过编译，而另一个不行]]></description>
+    <description><![CDATA[总结：函数声明时参数为空是一种陋习，这表明参数类型和数目都不明确，可能会导致UB
+函数声明：int getP()与int getP(void) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 #include &lt;stdio.h&gt; int getP();	float outF(); int main(void) { printf(&#34;%d\n&#34;, getP(10)); outF(10); return 0; } int getP(int a) { int ret = 1; for (int i = 0; i &lt; a; i++) ret = ret &lt;&lt; 1; return ret; } float outF(float a) { printf(&#34;%f\n&#34;, a); } 其中一个可以过编译，而另一个不行]]></description>
 </item>
 </channel>
 </rss>

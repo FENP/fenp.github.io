@@ -1,13 +1,13 @@
 # 二叉树的遍历
 
-> ###  二叉树是一种重要的树形数据结构, 对其遍历的方式有以下几种:  
+> 二叉树是一种重要的树形数据结构, 对其遍历的方式有以下几种:  
 > [前序](https://leetcode-cn.com/problems/binary-tree-preorder-traversal/)  
 > [中序](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)  
 > [后序](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/)  
 > 每一种遍历方式都有***递归*** 与 ***非递归***两种, 本文使用java分别进行实现。  
-> **本文阅读完成后请回答一下上图红色数字的含义及其与前、中、后序遍历的关系。**  
+<!-- > **本文阅读完成后请回答一下上图红色数字的含义及其与前、中、后序遍历的关系。**   -->
 
-> ### 二叉树的数据结构定义如下
+### 二叉树的数据结构定义如下
 ```java
 class TreeNode {
 	int val;
@@ -24,7 +24,7 @@ class TreeNode {
     }
 }
 ```
-> ### 二叉树的遍历
+### 二叉树的遍历
 * #### **递归**  
 
   递归版本简单易懂, 注意递归顺序

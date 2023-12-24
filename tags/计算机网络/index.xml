@@ -6,10 +6,10 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>jayayuan@outlook.com (JayaYuan)</managingEditor>
             <webMaster>jayayuan@outlook.com (JayaYuan)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 07 Oct 2021 16:07:22 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="self" type="application/rss+xml" /><item>
     <title>简要概述TCP/IP模型、SSL/TLS/HTTPS协议以及SSL证书</title>
-    <link>https://example.com/httpswithssltls/</link>
+    <link>https://example.com/httpwithssltls/</link>
     <pubDate>Thu, 07 Oct 2021 16:07:22 &#43;0800</pubDate>
     <author>JayaYuan</author>
-    <guid>https://example.com/httpswithssltls/</guid>
+    <guid>https://example.com/httpwithssltls/</guid>
     <description><![CDATA[原文链接：A brief overview of the TCP/IP model, SSL/TLS/HTTPS protocols and SSL certificates
 在本文中，我们将了解基于SSL/TLS协议的Web加密和Web安全如何工作。我们还将了解SSL证书的结构，以及如何生成一个供自己使用的自签名证书。
 我现在正在写一篇关于如何用Go（golang）创建一个安全的HTTP服务器的文章。我想没有比这更好的机会来探讨这个关于Web安全的广泛话题了。

@@ -10,11 +10,11 @@
     <pubDate>Tue, 27 Oct 2020 16:48:51 &#43;0800</pubDate>
     <author>JayaYuan</author>
     <guid>https://example.com/binarytreetraversal/</guid>
-    <description><![CDATA[二叉树是一种重要的树形数据结构, 对其遍历的方式有以下几种: 前序
+    <description><![CDATA[二叉树是一种重要的树形数据结构, 对其遍历的方式有以下几种:
+前序
 中序
 后序
 每一种遍历方式都有递归 与 非递归两种, 本文使用java分别进行实现。
-本文阅读完成后请回答一下上图红色数字的含义及其与前、中、后序遍历的关系。
 二叉树的数据结构定义如下 1 2 3 4 5 6 7 8 9 10 11 12 13 14 class TreeNode { int val; TreeNode left; TreeNode right; TreeNode() {} TreeNode(int val) { this.val = val; } TreeNode(int val, TreeNode left, TreeNode right) { this.val = val; this.left = left; this.right = right; } } 二叉树的遍历 递归 递归版本简单易懂, 注意递归顺序
 前序(PreOrder) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 class Solution { public List&lt;Integer&gt; preorderTraversal(TreeNode root) { List&lt;Integer&gt; ans = new ArrayList&lt;Integer&gt;(); preOrder(root, ans); return ans; } private void preOrder(TreeNode root, List&lt;Integer&gt; ans){ if(root == null) return; ans.]]></description>
 </item>

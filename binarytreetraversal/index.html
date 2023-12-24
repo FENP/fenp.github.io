@@ -5,31 +5,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>二叉树的遍历 - JayaYuan&#39;s Blog</title><meta name="Description" content="JayaYuan&#39;s Blog"><meta property="og:title" content="二叉树的遍历" />
-<meta property="og:description" content="二叉树是一种重要的树形数据结构, 对其遍历的方式有以下几种: 前序
+<meta property="og:description" content="二叉树是一种重要的树形数据结构, 对其遍历的方式有以下几种:
+前序
 中序
 后序
 每一种遍历方式都有递归 与 非递归两种, 本文使用java分别进行实现。
-本文阅读完成后请回答一下上图红色数字的含义及其与前、中、后序遍历的关系。
 二叉树的数据结构定义如下 1 2 3 4 5 6 7 8 9 10 11 12 13 14 class TreeNode { int val; TreeNode left; TreeNode right; TreeNode() {} TreeNode(int val) { this.val = val; } TreeNode(int val, TreeNode left, TreeNode right) { this.val = val; this.left = left; this.right = right; } } 二叉树的遍历 递归 递归版本简单易懂, 注意递归顺序
 前序(PreOrder) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 class Solution { public List&lt;Integer&gt; preorderTraversal(TreeNode root) { List&lt;Integer&gt; ans = new ArrayList&lt;Integer&gt;(); preOrder(root, ans); return ans; } private void preOrder(TreeNode root, List&lt;Integer&gt; ans){ if(root == null) return; ans." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://example.com/binarytreetraversal/" /><meta property="og:image" content="https://example.com/logo.png" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://example.com/binarytreetraversal/" /><meta property="og:image" content="https://example.com/binarytreetraversal/binary_tree_traversal.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-10-27T16:48:51+08:00" />
 <meta property="article:modified_time" content="2020-10-27T16:48:51+08:00" /><meta property="og:site_name" content="JayaYuan" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://example.com/logo.png" /><meta name="twitter:title" content="二叉树的遍历"/>
-<meta name="twitter:description" content="二叉树是一种重要的树形数据结构, 对其遍历的方式有以下几种: 前序
+<meta name="twitter:image" content="https://example.com/binarytreetraversal/binary_tree_traversal.png" /><meta name="twitter:title" content="二叉树的遍历"/>
+<meta name="twitter:description" content="二叉树是一种重要的树形数据结构, 对其遍历的方式有以下几种:
+前序
 中序
 后序
 每一种遍历方式都有递归 与 非递归两种, 本文使用java分别进行实现。
-本文阅读完成后请回答一下上图红色数字的含义及其与前、中、后序遍历的关系。
 二叉树的数据结构定义如下 1 2 3 4 5 6 7 8 9 10 11 12 13 14 class TreeNode { int val; TreeNode left; TreeNode right; TreeNode() {} TreeNode(int val) { this.val = val; } TreeNode(int val, TreeNode left, TreeNode right) { this.val = val; this.left = left; this.right = right; } } 二叉树的遍历 递归 递归版本简单易懂, 注意递归顺序
 前序(PreOrder) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 class Solution { public List&lt;Integer&gt; preorderTraversal(TreeNode root) { List&lt;Integer&gt; ans = new ArrayList&lt;Integer&gt;(); preOrder(root, ans); return ans; } private void preOrder(TreeNode root, List&lt;Integer&gt; ans){ if(root == null) return; ans."/>
 <meta name="application-name" content="JayaYuan&#39;s Blog">
 <meta name="apple-mobile-web-app-title" content="JayaYuan&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://example.com/binarytreetraversal/" /><link rel="prev" href="https://example.com/slow_and_fast_pointer/" /><link rel="next" href="https://example.com/primefactorization/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://example.com/binarytreetraversal/" /><link rel="prev" href="https://example.com/slow-and-fast-pointer/" /><link rel="next" href="https://example.com/primefactorization/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -40,7 +40,12 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/example.com\/binarytreetraversal\/"
-        },"image": ["https:\/\/example.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "二叉树","wordcount":  517 ,
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/example.com\/binarytreetraversal\/binary_tree_traversal.png",
+                            "width":  1183 ,
+                            "height":  701 
+                        }],"genre": "posts","keywords": "二叉树","wordcount":  516 ,
         "url": "https:\/\/example.com\/binarytreetraversal\/","datePublished": "2020-10-27T16:48:51+08:00","dateModified": "2020-10-27T16:48:51+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
@@ -119,9 +124,16 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">二叉树的遍历</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/about" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>JayaYuan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>数据结构</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-10-27">2020-10-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;517 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-10-27">2020-10-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;516 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  data-kept="">
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/binarytreetraversal/binary_tree_traversal.png"
+        data-srcset="/binarytreetraversal/binary_tree_traversal.png, /binarytreetraversal/binary_tree_traversal.png 1.5x, /binarytreetraversal/binary_tree_traversal.png 2x"
+        data-sizes="auto"
+        alt="/binarytreetraversal/binary_tree_traversal.png"
+        title="/binarytreetraversal/binary_tree_traversal.png" /></div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
@@ -130,7 +142,6 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#二叉树是一种重要的树形数据结构-对其遍历的方式有以下几种">二叉树是一种重要的树形数据结构, 对其遍历的方式有以下几种:</a></li>
         <li><a href="#二叉树的数据结构定义如下">二叉树的数据结构定义如下</a></li>
         <li><a href="#二叉树的遍历">二叉树的遍历</a>
           <ul>
@@ -143,16 +154,14 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><blockquote>
-<h3 id="二叉树是一种重要的树形数据结构-对其遍历的方式有以下几种">二叉树是一种重要的树形数据结构, 对其遍历的方式有以下几种:</h3>
-<p><a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/" target="_blank" rel="noopener noreffer ">前序</a><br>
+<p>二叉树是一种重要的树形数据结构, 对其遍历的方式有以下几种:<br>
+<a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/" target="_blank" rel="noopener noreffer ">前序</a><br>
 <a href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/" target="_blank" rel="noopener noreffer ">中序</a><br>
 <a href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/" target="_blank" rel="noopener noreffer ">后序</a><br>
-每一种遍历方式都有<em><strong>递归</strong></em> 与 <em><strong>非递归</strong></em>两种, 本文使用java分别进行实现。<br>
-<strong>本文阅读完成后请回答一下上图红色数字的含义及其与前、中、后序遍历的关系。</strong></p>
+每一种遍历方式都有<em><strong>递归</strong></em> 与 <em><strong>非递归</strong></em>两种, 本文使用java分别进行实现。</p>
 </blockquote>
-<blockquote>
+<!-- > **本文阅读完成后请回答一下上图红色数字的含义及其与前、中、后序遍历的关系。**   -->
 <h3 id="二叉树的数据结构定义如下">二叉树的数据结构定义如下</h3>
-</blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -187,9 +196,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><blockquote>
-<h3 id="二叉树的遍历">二叉树的遍历</h3>
-</blockquote>
+</div><h3 id="二叉树的遍历">二叉树的遍历</h3>
 <ul>
 <li>
 <h4 id="递归"><strong>递归</strong></h4>
@@ -533,7 +540,7 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/slow_and_fast_pointer/" class="prev" rel="prev" title="快慢指针"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>快慢指针</a>
+    <div class="post-nav"><a href="/slow-and-fast-pointer/" class="prev" rel="prev" title="快慢指针"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>快慢指针</a>
             <a href="/primefactorization/" class="next" rel="next" title="分解质因数">分解质因数<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="giscus" class="comment"></div><noscript>
