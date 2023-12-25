@@ -21,7 +21,7 @@
     <guid>https://example.com/slow-and-fast-pointer/</guid>
     <description><![CDATA[什么是快慢指针 在链表中使用两个指针，其中一个指针的移动速度比另外一个指针移动的速度快，这就是快慢指针。借助两个指针产生的距离差值，快慢指针有妙用。
 链表结构 1 2 3 4 5 6 7 8 9 10 11 12 public class ListNode { int val; ListNode next; ListNode() {} ListNode(int val) { this.val = val; } ListNode(int val, ListNode next) { this.val = val; this.next = next; } } 快慢指针的妙用 找n等分点 n = 2是最常见的情况(即寻找链表的中点), 这是解决许多问题的第一步(如: No.143、No.148)。我常用的寻找2等分点代码如下(java):
-1 2 3 4 5 ListNode slow = head, fast = head; while(fast.next != tail &amp;&amp; fast.next.next !]]></description>
+1 2 3 4 5 ListNode slow = head, fast = head; while(fast.next != tail &amp;&amp; fast.next.next != tail){ slow = slow.]]></description>
 </item>
 </channel>
 </rss>

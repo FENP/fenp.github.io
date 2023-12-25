@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>随笔 - Category - JayaYuan&#39;s Blog</title>
+        <link>https://example.com/categories/%E9%9A%8F%E7%AC%94/</link>
+        <description>随笔 - Category - JayaYuan&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>jayayuan@outlook.com (JayaYuan)</managingEditor>
+            <webMaster>jayayuan@outlook.com (JayaYuan)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 24 Dec 2023 16:20:23 &#43;0800</lastBuildDate><atom:link href="https://example.com/categories/%E9%9A%8F%E7%AC%94/" rel="self" type="application/rss+xml" /><item>
+    <title>2023年度个人总结</title>
+    <link>https://example.com/2023-summary/</link>
+    <pubDate>Sun, 24 Dec 2023 16:20:23 &#43;0800</pubDate>
+    <author>JayaYuan</author>
+    <guid>https://example.com/2023-summary/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

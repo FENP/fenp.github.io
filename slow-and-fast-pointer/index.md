@@ -1,9 +1,9 @@
 # 快慢指针
 
-> ### 什么是快慢指针  
+## 什么是快慢指针  
 > &emsp;&emsp;在链表中使用两个指针，其中一个指针的移动速度比另外一个指针移动的速度快，这就是快慢指针。借助两个指针产生的距离差值，快慢指针有妙用。 
 
-> ### 链表结构  
+## 链表结构  
 ```java
 public class ListNode {
     int val;
@@ -18,8 +18,8 @@ public class ListNode {
     }
 }
 ```
-> ### 快慢指针的妙用
-#### 找n等分点  
+## 快慢指针的妙用
+### 找n等分点  
 &emsp;&emsp;n = 2是最常见的情况(即寻找链表的中点), 这是解决许多问题的第一步(如: [No.143](https://leetcode-cn.com/problems/reorder-list/)、[No.148](https://leetcode-cn.com/problems/sort-list/))。我常用的寻找2等分点代码如下(*java*):  
 ```java
 ListNode slow = head, fast = head;
@@ -31,7 +31,7 @@ while(fast.next != tail && fast.next.next != tail){
 &emsp;&emsp;在上述代码执行完成后, slow指针指向了链表的中间结点或中间两个结点的左结点。  
 ![奇数结点](SF_O.png)  
 ![偶数结点](SF_E.png)
-#### 判环  
+### 判环  
 &emsp;&emsp;快慢指针的另一个重要用法就是判断链表中是否有环路(如: [No.141](https://leetcode-cn.com/problems/linked-list-cycle/))  
 ```java
 public class Solution {

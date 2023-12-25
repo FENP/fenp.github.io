@@ -21,21 +21,13 @@
 2. 当您给一个人寄信时，您会在信上标明收信人的地址，这样信就能送到正确的人手中。同样地，当您在因特网上发送一些数据时，您需要知道最终接收这些数据的设备的地址。
 3. 当一个网络应用程序在设备中启动（如**Web浏览器**或**Web服务器**）来传输或接收数据时，它将在一个[**端口**](https://en.wikipedia.org/wiki/Port_(computer_networking))上监听因特网数据，如**8080**。发送方需要知道接收方设备的端口，以便数据被正确的应用程序接收，而不是其他可能将其滥用的应用程序。
 
-------
-
-:bulb:*这些端口是由操作系统随机分配的，但是我们可以迫使操作系统将应用程序绑定到一个特定的端口上。*
-
-------
+{{< admonition tip "小贴士" >}} 这些端口是由操作系统随机分配的，但是我们可以迫使操作系统将应用程序绑定到一个特定的端口上。 {{< /admonition >}}
 
 4. 接收到数据的设备将无法理解它，除非它事先知道它在看什么。这个数据可能是一张图片、一首歌、一条简单的文本消息或者一个HTML文档。因此我们需要告诉接收者数据的类型，以便它可以正确理解数据。
 
 这四个步骤描述了在因特网上进行**数据传输**的**通信模型**。其中每一步都由一个**协议**定义。根据协议的类型，每一步都会对数据进行相应的格式化，这样接收方就能够正确地提取数据了。
 
-------
-
-:bulb:*根据数据传输的用例，在一个特定的模型中可能有更多的步骤。您可以阅读[OSI模型](https://en.wikipedia.org/wiki/OSI_model#Layer_architecture)。任何人都可以用这个模型在因特网或局域网（LAN）上传输数据。*
-
-------
+{{< admonition tip "小贴士" >}} 根据数据传输的用例，在一个特定的模型中可能有更多的步骤。您可以阅读[OSI模型](https://en.wikipedia.org/wiki/OSI_model#Layer_architecture)。任何人都可以用这个模型在因特网或局域网（LAN）上传输数据。{{< /admonition >}}
 
 如果我们仔细审视这些步骤，我们会发现它们形成了一个管道：来自一个步骤的数据被发送到另一个步骤进行下一步处理，直到它在因特网上传递。然而，**层**可能是描述这些步骤的最合适的词汇，我们马上就会知道**为什么**。
 
@@ -53,21 +45,13 @@
 
 这个**HTTP包**将会被发送到**传输层**。传输层使用 **TCP 协议标头**以及**源端口**和**目标端口**包装数据包。源端口是传输数据的应用程序的端口（如 Web 浏览器），目标端口是运行在接收端的应用程序接收数据的端口。 **TCP 包**被网络层接收，它用源和目标 IP 地址以及 **IP 协议标头**将其包装。源IP地址是发送方设备的IP地址，目标地址是接收方设备的IP地址。
 
-------
-
-:bulb:*IP 地址是分配给因特网上设备的唯一编号。您可以阅读有关  [**IPV4**](https://en.wikipedia.org/wiki/IPv4) 和  [**IPV6**](https://en.wikipedia.org/wiki/IPv6)  IP 地址格式获得更多信息。设备的 IP 地址可以在数据传输之前就知道，也可以使用 HTTP 标头中包含的[**域名**](https://en.wikipedia.org/wiki/Domain_Name_System)从[**DNS**](https://www.youtube.com/watch?v=mpQZVYPuDGU)服务器解析。*
-
-------
+{{< admonition tip "小贴士" >}} IP 地址是分配给因特网上设备的唯一编号。您可以阅读有关  [**IPV4**](https://en.wikipedia.org/wiki/IPv4) 和  [**IPV6**](https://en.wikipedia.org/wiki/IPv6)  IP 地址格式获得更多信息。设备的 IP 地址可以在数据传输之前就知道，也可以使用 HTTP 标头中包含的[**域名**](https://en.wikipedia.org/wiki/Domain_Name_System)从[**DNS**](https://www.youtube.com/watch?v=mpQZVYPuDGU)服务器解析。{{< /admonition >}}
 
 一旦数据包被印上IP协议，它就成为了可以通过因特网传输的**网络包**。这是虚拟层的最后一步（*（指）由计算机程序处理（的步骤）*）。
 
 最后的**链路层**是设备上的**物理层**。这是硬件部分，例如设备上的网卡（[NIC](https://en.wikipedia.org/wiki/Network_interface_controller)），它接收数据包并将源和目标MAC地址添加到数据包中。
 
-------
-
-:bulb:*媒体访问控制 （[MAC](https://en.wikipedia.org/wiki/MAC_address)） 地址是设备制造商提供的硬件部分的独特地址。使用 MAC 地址，两个设备之间的通信成为了可能*
-
-------
+{{< admonition tip "小贴士" >}} 媒体访问控制 （[MAC](https://en.wikipedia.org/wiki/MAC_address)） 地址是设备制造商提供的硬件部分的独特地址。使用 MAC 地址，两个设备之间的通信成为了可能 {{< /admonition >}}
 
 一旦数据包被源和目标的MAC地址以及一些**数据传输层的标头**（例如以太网：[*Ethernet*](https://en.wikipedia.org/wiki/Ethernet)）标记，它就可以被发送到因特网通信设备，如WiFI路由器或者[卫星天线](https://en.wikipedia.org/wiki/Satellite_dish) 。它们将负责数据包在因特网上的传输。
 
@@ -77,11 +61,7 @@
 
 例如，如果服务器使用HTTP协议发送一个HTML页面，Web浏览器完全能够理解 HTTP协议的数据包并从中提取 出HTML 页面。然后，浏览器将在屏幕上呈现这个HTML文档。
 
-------
-
-:bulb:*HTTP协议还可用于传输 HTML页面以外的数据。HTTP协议的`Content-Type`标头可以被浏览器用来理解内容的[MIME](https://en.wikipedia.org/wiki/MIME) 类型*
-
-------
+{{< admonition tip "小贴士" >}} HTTP协议还可用于传输 HTML页面以外的数据。HTTP协议的`Content-Type`标头可以被浏览器用来理解内容的[MIME](https://en.wikipedia.org/wiki/MIME) 类型 {{< /admonition >}}
 
 ## HTTP协议
 
@@ -93,11 +73,7 @@ HTTP协议基于TCP/IP或者[UDP](https://en.wikipedia.org/wiki/User_Datagram_Pr
 
 首先，客户端发送一个空的数据包（（此处“空”是指）没有任何应用数据），其中TCP协议的[`SYN`](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#TCP_segment_structure)（*synchronize*）标志被置为`1`。当这个数据包被接收方收到后，它知道客户端尝试建立一个连接（会话）。
 
-------
-
-:bulb:*应用数据是指包含在应用层中的数据。*
-
-------
+{{< admonition tip "小贴士" >}} 应用数据是指包含在应用层中的数据。 {{< /admonition >}}
 
 服务端会返回一个将`SYN`和`ACK`（*acknowledge*）标记置为`1`的空数据包。当客户端收到这个数据包时，它知道服务端作出了回应并且愿意接受请求。
 
@@ -111,19 +87,11 @@ HTTP协议基于TCP/IP或者[UDP](https://en.wikipedia.org/wiki/User_Datagram_Pr
 
 正如您在上面截图中看到的那样，当我们想向`info.cern.ch`服务器发送HTTP GET请求时，首先发生的是TCP三次握手。
 
-------
-
-:bulb:*有很多很棒的东西是您无法在一个屏幕截图中看到的。我建议您在您的系统上安装Wireshark并尝试一下。您可以根据这篇精彩的[演讲](https://youtu.be/0X2BVwNX4ks?list=PLejHxQ6h_36UrBhQmbN5wSH8xgjDMhhhA&t=2158)使用和应用Wireshark中的过滤器来跟踪TCP/IP通信通道中的数据包。*
-
-------
+{{< admonition info "拓展" >}} 有很多很棒的东西是您无法在一个屏幕截图中看到的。我建议您在您的系统上安装Wireshark并尝试一下。您可以根据这篇精彩的[演讲](https://youtu.be/0X2BVwNX4ks?list=PLejHxQ6h_36UrBhQmbN5wSH8xgjDMhhhA&t=2158)使用和应用Wireshark中的过滤器来跟踪TCP/IP通信通道中的数据包。{{< /admonition >}}
 
 一旦连接建立，HTTP协议数据将作为应用数据，通过网络数据包发送到服务器。此数据包含纯文本格式的HTTP头。
 
-------
-
-:bulb:*然而，数据是使用二进制编码的。*
-
-------
+{{< admonition note "注意" >}} 然而，数据是使用二进制编码的。{{< /admonition >}}
 
 ![HTTP protocol](HTTP_protocol.png)
 
@@ -131,29 +99,17 @@ HTTP协议基于TCP/IP或者[UDP](https://en.wikipedia.org/wiki/User_Datagram_Pr
 
 一旦服务器发送回所有数据（可能是一个数据包或多个数据包），客户机必须通过发送空数据包来确认接收，空数据包的`ACK`标志设置为`1`，以及确认收到的数据包的**序列号**。
 
-------
-
-:bulb:*您可以通过这个[视频](https://www.youtube.com/watch?v=BWILgDt6jz0)更好地了解序列号和确认号（ACK）的用途。*
-
-------
+{{< admonition info "拓展" >}} 您可以通过这个[视频](https://www.youtube.com/watch?v=BWILgDt6jz0)更好地了解序列号和确认号（ACK）的用途。{{< /admonition >}}
 
 一旦服务器没有更多的数据发送，它将发送一个`FIN`（finished）标志设置为`1`的空数据包，这个标记暗含了结束信息。客户端可以确认数据包并关闭连接，如下图所示（图源[维基百科](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)）。
 
 ![wavehand](wavehand.png)
 
-------
-
-:bulb:*在[HTTP持久连接](https://en.wikipedia.org/wiki/HTTP_persistent_connection)（keep-alive）中，相同的TCP连接将会被用于请求其他资源。这更高效，因为我们不必一次又一次地进行相同的TCP三次握手。*
-
-------
+{{< admonition tip "小贴士" >}} 在[HTTP持久连接](https://en.wikipedia.org/wiki/HTTP_persistent_connection)（keep-alive）中，相同的TCP连接将会被用于请求其他资源。这更高效，因为我们不必一次又一次地进行相同的TCP三次握手。 {{< /admonition >}}
 
 很多时候，客户端和服务器之间的通信并不顺畅。可能会丢失数据包，而且数据包可能以错误的顺序到达，因此需要重新传输数据包。
 
-------
-
-:bulb:*UDP协议在这方面有所不同。在UDP协议中，接收方不必发送接收确认数据包，并且数据包丢失或数据包顺序也不作任何严肃处理。您可以通过[这个视频](https://www.youtube.com/watch?v=Vdc8TCESIg8)了解TCP和UDP协议之间的差异。*
-
-------
+{{< admonition info "拓展" >}} UDP协议在这方面有所不同。在UDP协议中，接收方不必发送接收确认数据包，并且数据包丢失或数据包顺序也不作任何严肃处理。您可以通过[这个视频](https://www.youtube.com/watch?v=Vdc8TCESIg8)了解TCP和UDP协议之间的差异。{{< /admonition >}}
 
 ### 安全问题
 
@@ -165,11 +121,7 @@ HTTP是一个不安全的协议，因为HTTP协议以纯文本格式编码。因
 
 HTTPS是安全的超文本传输协议（**HyperText Transfer Protocol Secure**）的意思，但是这在某些方面具有误导性。HTTPS协议并不能单独对数据进行加密，事实上，它依赖于**SSL**或**TLS**协议层。
 
-------
-
-:bulb:*我打算用TLS协议来指代SSL和TLS协议，很快我们就会明白为什么SSL的名字在21世纪可能会产生误导。*
-
-------
+{{< admonition note "注意" >}} 我打算用TLS协议来指代SSL和TLS协议，很快我们就会明白为什么SSL的名字在21世纪可能会产生误导。{{< /admonition >}}
 
 HTTP协议层和TLS协议层都是应用层的一部分。TLS层的作用是使用TLS握手（在TCP握手之后）与服务器建立安全连接，并使用与服务器协商的一些加密算法对HTTP数据进行加密。
 
@@ -187,19 +139,11 @@ HTTP协议层和TLS协议层都是应用层的一部分。TLS层的作用是使�
 
 在非对称加密算法中，我们有两个用于加密和解密的密钥。**公钥**用于加密数据并将其提供给公众，只有**私钥**（保密不公开）才能破译它。
 
-------
-
-:bulb:*这种非对称加密被称为[公钥加密法](https://en.wikipedia.org/wiki/Public-key_cryptography)。*
-
-------
+{{< admonition tip "小贴士" >}} 这种非对称加密被称为[公钥加密法](https://en.wikipedia.org/wiki/Public-key_cryptography)。{{< /admonition >}}
 
 最流行的非对称加密算法是[RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem))（Rivest-Shamir-Adleman），因为它广泛用于网络上的密钥交换和数字签名验证。但是，现在浏览器正在采用一种更安全、更有效的[Diffie-Hellman](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange)密钥交换算法进行密钥交换。
 
-------
-
-:bulb:*RSA私钥也可用于加密数据，公钥可以解密由私钥加密的数据。这用于生成和验证加密数据的数字签名和SSL证书（稍后解释）。*
-
-------
+{{< admonition tip "小贴士" >}} RSA私钥也可用于加密数据，公钥可以解密由私钥加密的数据。这用于生成和验证加密数据的数字签名和SSL证书（稍后解释）。{{< /admonition >}}
 
 非对称加密算法通常比较慢，而且是CPU密集型（[为什么](https://crypto.stackexchange.com/questions/5782/why-is-asymmetric-cryptography-bad-for-huge-data)），密钥或数据的长度越长，加密或解密数据的时间就越长。
 
@@ -221,11 +165,7 @@ SSL协议最早由网景（[**Netscape**](https://en.wikipedia.org/wiki/Netscape
 
 目前，SSL协议已被没落（某些变体除外），没有人使用它。 IETF于1999年推出了[TLS协议的第一个版本](https://tools.ietf.org/html/rfc2246)，该协议现在是网络上所有加密通信的标准。
 
-------
-
-:bulb:*当有人谈及SSL时，其实他们可能是在说TLS。甚至SSL证书事实上也是TLS证书。**SSL v3.1**或**SSL v4**只是**TLS1.0+**版本的别名。*
-
-------
+{{< admonition tip "小贴士" >}} 当有人谈及SSL时，其实他们可能是在说TLS。甚至SSL证书事实上也是TLS证书。**SSL v3.1**或**SSL v4**只是**TLS1.0+**版本的别名。{{< /admonition >}}
 
 ### TLS（传输层安全*transport layer security*）协议
 
@@ -235,11 +175,7 @@ TLS是对 SSL协议的改进。TLS1.0于1999年推出，经历了一些迭代。
 
 TLS1.3仅支持Diffie-Hellman公钥加密算法的修改版本，用于在客户端和服务器之间共享对称密钥。它还放弃了对用于密钥交换的RSA算法的支持。
 
-------
-
-:bulb:*然而，不是所有的浏览器和服务器都支持TLS 1.3。因此，浏览器和服务器可能不兼容TLS1.3的通信，从而使用较低的TLS版本，如TLS1.2。*
-
-------
+{{< admonition tip "小贴士" >}} 然而，不是所有的浏览器和服务器都支持TLS 1.3。因此，浏览器和服务器可能不兼容TLS1.3的通信，从而使用较低的TLS版本，如TLS1.2。{{< /admonition >}}
 
 ## 使用TLS1.2的HTTPS握手
 
@@ -247,11 +183,7 @@ TLS1.3仅支持Diffie-Hellman公钥加密算法的修改版本，用于在客户
 
 ![TLS1.2handshake](TLS1.2handshake.png)
 
-------
-
-:bulb:*这次TCP层的目标端口是**443**，这是HTTPS协议的[默认端口](https://tools.ietf.org/html/rfc2818)。*
-
-------
+{{< admonition tip "小贴士" >}} 这次TCP层的目标端口是**443**，这是HTTPS协议的[默认端口](https://tools.ietf.org/html/rfc2818)。{{< /admonition >}}
 
 TCP连接建立后，TLS握手开始。首先，客户端发送一个空数据包，但具有TLS1.2 协议层。该层包含一些元数据和一个**客户端 Hello**消息。
 
@@ -259,11 +191,7 @@ TCP连接建立后，TLS握手开始。首先，客户端发送一个空数据�
 
 从上面的屏幕截图中可以看到，在**客户端 Hello**握手消息中，我们附上了我们的应用程序（如浏览器）目前支持的一些密码套件（**cipher suites**）列表，我们稍后再谈。
 
-------
-
-:bulb:*当发送**客户端 Hello**握手信息时，通信的应用程序开始可能首先尝试使用TLS协议的最高版本，如TLS 1.3，然后降级到服务器支持的合适版本。如果应用程序不支持服务器所要求的版本，它可能会放弃TCP连接并发出警告。*
-
-------
+{{< admonition note "注意" >}} 当发送**客户端 Hello**握手信息时，通信的应用程序开始可能首先尝试使用TLS协议的最高版本，如TLS 1.3，然后降级到服务器支持的合适版本。如果应用程序不支持服务器所要求的版本，它可能会放弃TCP连接并发出警告。{{< /admonition >}}
 
 ![TLSClientHelloMessage2](TLSClientHelloMessage2.png)
 
@@ -295,11 +223,7 @@ TCP连接建立后，TLS握手开始。首先，客户端发送一个空数据�
 
 一旦客户端收到这个数据包，TLS1.2握手就完成了，应用程序数据可以使用选定的批量数据加密算法（对称加密算法）进行加密/解密，并通过TCP通道传输。
 
-------
-
-:bulb:中间人可以篡改握手，但是由于共享密钥已于RSA加密交换，因此握手完全安全（*没理解* :confused:）。然而，如果被加密的Finished消息已经被篡改，TCP连接将被废弃并且无法通过同一管道进行进一步的通信。
-
-------
+{{< admonition note "注意" >}} 中间人可以篡改握手，但是由于共享密钥已于RSA加密交换，因此握手完全安全（*没理解* :confused:）。然而，如果被加密的Finished消息已经被篡改，TCP连接将被废弃并且无法通过同一管道进行进一步的通信。{{< /admonition >}}
 
 ### 会话密钥（Session Keys）
 
@@ -315,11 +239,7 @@ TLS1.3协议被强制使用**ECDHE**密钥交换算法。它基本算是一种�
 
 ECDHE的工作方式是在客户端和服务器端保留一个随机生成的私钥。客户端使用 DH算法私有参数、DH算法公共参数和椭圆曲线公共参数生成一个公钥。该公钥将与所有公共参数一起共享给服务器。服务器使用客户端的公钥和参数以及自己的DH算法私有参数，算出自己的公钥并与客户端共享。服务器根据这些结果生成共享密钥。使用服务器的公钥和之前的参数，客户端算出一个共享密钥。DH算法背后花哨的数学使得客户端和服务器可以生成相同的共享密钥。此共享密钥用于批量数据加密。
 
-------
-
-:bulb:我不打算解释ECDHE背后的数学原理，但您可以观看这个[精彩的视频](https://www.youtube.com/watch?v=M-0qt6tdHzk&t=2s)来了解DH算法的工作原理。
-
-------
+{{< admonition info "拓展" >}} 我不打算解释ECDHE背后的数学原理，但您可以观看这个[精彩的视频](https://www.youtube.com/watch?v=M-0qt6tdHzk&t=2s)来了解DH算法的工作原理。{{< /admonition >}}
 
 ### 前向保密（Forward Secrecy）
 
@@ -329,11 +249,7 @@ ECDHE 中的`E`代表临时参数。这意味着客户端和服务器使用 DH �
 
 由于此过程不涉及SSL私钥和公钥，所以它们对提取通过 TLS 1.3 通道传输的数据不是很有用。这使得TLS1.3通信具有完美的前向保密（[*PFS*](https://en.wikipedia.org/wiki/Forward_secrecy)）。
 
-------
-
-:bulb:如果私有参数、预主密钥或会话密钥泄露，那么攻击者也只能提取单个TLS会话的数据。
-
-------
+{{< admonition note "注意" >}} 如果私有参数、预主密钥或会话密钥泄露，那么攻击者也只能提取单个TLS会话的数据。{{< /admonition >}}
 
 ### 更短的握手时间（Shorter Handshake）
 
@@ -341,7 +257,7 @@ TLS 1.3不仅有完美的前向保密，而且可以使TLS握手非常短。
 
 与TLS1.2一样，客户端发送**客户端Hello**消息，同时此数据包中还包含最终用于生成共享密钥的公共参数，如下图所示。
 
-![TLS1.3ClientHelloMessage](HTLS1.3ClientHelloMessage.png)
+![TLS1.3ClientHelloMessage](TLS1.3ClientHelloMessage.png)
 
 在同一数据包中还包含客户端支持的密码套件列表，服务器将选择使用合适的ECDHE算法。
 

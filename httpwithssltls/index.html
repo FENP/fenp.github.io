@@ -12,21 +12,17 @@
 因特网是如何工作的？ 我可以用一句话回答这个问题，或者说，我们也可以在这谈论几个小时。不过我想让事情变的简单易懂。
 因特网就是分布在世界各地，将不同设备互相连接起来的电网线。即使您没有看到实体的电线，但是您依旧可以想象您的智能手机通过虚拟电线连接到WiFi路由器，让您与位于您几英里之外的谷歌服务器对话。
 当您想通过因特网向和您的个人设备连接的设备发送一些数据时，您需要遵守一些规则。所有在因特网上传递的数据都是由0和1组成的二进制数据。
-首先，用于发送数据的应用程序需要与设备上的硬件通信，以便在因特网上发送数据。同样，设备上的硬件需要与在因特网上实际传输数据的设备（如WiFi路由器）进行通信。 当您给一个人寄信时，您会在信上标明收信人的地址，这样信就能送到正确的人手中。同样地，当您在因特网上发送一些数据时，您需要知道最终接收这些数据的设备的地址。 当一个网络应用程序在设备中启动（如Web浏览器或Web服务器）来传输或接收数据时，它将在一个端口上监听因特网数据，如8080。发送方需要知道接收方设备的端口，以便数据被正确的应用程序接收，而不是其他可能将其滥用的应用程序。 &#x1f4a1;这些端口是由操作系统随机分配的，但是我们可以迫使操作系统将应用程序绑定到一个特定的端口上。
-接收到数据的设备将无法理解它，除非它事先知道它在看什么。这个数据可能是一张图片、一首歌、一条简单的文本消息或者一个HTML文档。因此我们需要告诉接收者数据的类型，以便它可以正确理解数据。 这四个步骤描述了在因特网上进行数据传输的通信模型。其中每一步都由一个协议定义。根据协议的类型，每一步都会对数据进行相应的格式化，这样接收方就能够正确地提取数据了。
-&#x1f4a1;根据数据传输的用例，在一个特定的模型中可能有更多的步骤。您可以阅读OSI模型。任何人都可以用这个模型在因特网或局域网（LAN）上传输数据。
-如果我们仔细审视这些步骤，我们会发现它们形成了一个管道：来自一个步骤的数据被发送到另一个步骤进行下一步处理，直到它在因特网上传递。然而，层可能是描述这些步骤的最合适的词汇，我们马上就会知道为什么。
+首先，用于发送数据的应用程序需要与设备上的硬件通信，以便在因特网上发送数据。同样，设备上的硬件需要与在因特网上实际传输数据的设备（如WiFi路由器）进行通信。 当您给一个人寄信时，您会在信上标明收信人的地址，这样信就能送到正确的人手中。同样地，当您在因特网上发送一些数据时，您需要知道最终接收这些数据的设备的地址。 当一个网络应用程序在设备中启动（如Web浏览器或Web服务器）来传输或接收数据时，它将在一个端口上监听因特网数据，如8080。发送方需要知道接收方设备的端口，以便数据被正确的应用程序接收，而不是其他可能将其滥用的应用程序。 小贴士这些端口是由操作系统随机分配的，但是我们可以迫使操作系统将应用程序绑定到一个特定的端口上。接收到数据的设备将无法理解它，除非它事先知道它在看什么。这个数据可能是一张图片、一首歌、一条简单的文本消息或者一个HTML文档。因此我们需要告诉接收者数据的类型，以便它可以正确理解数据。 这四个步骤描述了在因特网上进行数据传输的通信模型。其中每一步都由一个协议定义。根据协议的类型，每一步都会对数据进行相应的格式化，这样接收方就能够正确地提取数据了。
+小贴士根据数据传输的用例，在一个特定的模型中可能有更多的步骤。您可以阅读OSI模型。任何人都可以用这个模型在因特网或局域网（LAN）上传输数据。如果我们仔细审视这些步骤，我们会发现它们形成了一个管道：来自一个步骤的数据被发送到另一个步骤进行下一步处理，直到它在因特网上传递。然而，层可能是描述这些步骤的最合适的词汇，我们马上就会知道为什么。
 TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）是我们前面看到的通信模型中的传输层协议，而因特网协议（Internet Protocol，IP）是网络层协议。
 这些协议共同推动了大部分的因特网通信。此时此刻，您的浏览器正在使用 TCP/IP 模型从服务器加载此网页。因此，这些协议共同构成了因特网协议套件 （internet protocol suite），如下图所示（图源维基百科）。
 在上述通信模型中（左侧），应用层从源（如内部存储或 RAM）获取数据并用特定协议（如HTTP）的一些标头将其包装。这会创建一个 HTTP 协议的数据包，并且可以被像 Web 浏览器一样理解它的应用程序读取。
 这个HTTP包将会被发送到传输层。传输层使用 TCP 协议标头以及源端口和目标端口包装数据包。源端口是传输数据的应用程序的端口（如 Web 浏览器），目标端口是运行在接收端的应用程序接收数据的端口。 TCP 包被网络层接收，它用源和目标 IP 地址以及 IP 协议标头将其包装。源IP地址是发送方设备的IP地址，目标地址是接收方设备的IP地址。
-&#x1f4a1;IP 地址是分配给因特网上设备的唯一编号。您可以阅读有关 IPV4 和 IPV6 IP 地址格式获得更多信息。设备的 IP 地址可以在数据传输之前就知道，也可以使用 HTTP 标头中包含的域名从DNS服务器解析。
-一旦数据包被印上IP协议，它就成为了可以通过因特网传输的网络包。这是虚拟层的最后一步（（指）由计算机程序处理（的步骤））。
-最后的链路层是设备上的物理层。这是硬件部分，例如设备上的网卡（NIC），它接收数据包并将源和目标MAC地址添加到数据包中。" />
+小贴士IP 地址是分配给因特网上设备的唯一编号。您可以阅读有关 IPV4 和 IPV6 IP 地址格式获得更多信息。设备的 IP 地址可以在数据传输之前就知道，也可以使用 HTTP 标头中包含的域名从DNS服务器解析。一旦数据包被印上IP协议，它就成为了可以通过因特网传输的网络包。这是虚拟层的最后一步（（指）由计算机程序处理（的步骤））。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://example.com/httpwithssltls/" /><meta property="og:image" content="https://example.com/httpwithssltls/featured-image.webp" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-10-07T16:07:22+08:00" />
-<meta property="article:modified_time" content="2021-10-07T16:07:22+08:00" /><meta property="og:site_name" content="JayaYuan" />
+<meta property="article:modified_time" content="2021-11-01T10:20:22+08:00" /><meta property="og:site_name" content="JayaYuan" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://example.com/httpwithssltls/featured-image.webp" /><meta name="twitter:title" content="简要概述TCP/IP模型、SSL/TLS/HTTPS协议以及SSL证书"/>
@@ -37,21 +33,17 @@ TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）�
 因特网是如何工作的？ 我可以用一句话回答这个问题，或者说，我们也可以在这谈论几个小时。不过我想让事情变的简单易懂。
 因特网就是分布在世界各地，将不同设备互相连接起来的电网线。即使您没有看到实体的电线，但是您依旧可以想象您的智能手机通过虚拟电线连接到WiFi路由器，让您与位于您几英里之外的谷歌服务器对话。
 当您想通过因特网向和您的个人设备连接的设备发送一些数据时，您需要遵守一些规则。所有在因特网上传递的数据都是由0和1组成的二进制数据。
-首先，用于发送数据的应用程序需要与设备上的硬件通信，以便在因特网上发送数据。同样，设备上的硬件需要与在因特网上实际传输数据的设备（如WiFi路由器）进行通信。 当您给一个人寄信时，您会在信上标明收信人的地址，这样信就能送到正确的人手中。同样地，当您在因特网上发送一些数据时，您需要知道最终接收这些数据的设备的地址。 当一个网络应用程序在设备中启动（如Web浏览器或Web服务器）来传输或接收数据时，它将在一个端口上监听因特网数据，如8080。发送方需要知道接收方设备的端口，以便数据被正确的应用程序接收，而不是其他可能将其滥用的应用程序。 &#x1f4a1;这些端口是由操作系统随机分配的，但是我们可以迫使操作系统将应用程序绑定到一个特定的端口上。
-接收到数据的设备将无法理解它，除非它事先知道它在看什么。这个数据可能是一张图片、一首歌、一条简单的文本消息或者一个HTML文档。因此我们需要告诉接收者数据的类型，以便它可以正确理解数据。 这四个步骤描述了在因特网上进行数据传输的通信模型。其中每一步都由一个协议定义。根据协议的类型，每一步都会对数据进行相应的格式化，这样接收方就能够正确地提取数据了。
-&#x1f4a1;根据数据传输的用例，在一个特定的模型中可能有更多的步骤。您可以阅读OSI模型。任何人都可以用这个模型在因特网或局域网（LAN）上传输数据。
-如果我们仔细审视这些步骤，我们会发现它们形成了一个管道：来自一个步骤的数据被发送到另一个步骤进行下一步处理，直到它在因特网上传递。然而，层可能是描述这些步骤的最合适的词汇，我们马上就会知道为什么。
+首先，用于发送数据的应用程序需要与设备上的硬件通信，以便在因特网上发送数据。同样，设备上的硬件需要与在因特网上实际传输数据的设备（如WiFi路由器）进行通信。 当您给一个人寄信时，您会在信上标明收信人的地址，这样信就能送到正确的人手中。同样地，当您在因特网上发送一些数据时，您需要知道最终接收这些数据的设备的地址。 当一个网络应用程序在设备中启动（如Web浏览器或Web服务器）来传输或接收数据时，它将在一个端口上监听因特网数据，如8080。发送方需要知道接收方设备的端口，以便数据被正确的应用程序接收，而不是其他可能将其滥用的应用程序。 小贴士这些端口是由操作系统随机分配的，但是我们可以迫使操作系统将应用程序绑定到一个特定的端口上。接收到数据的设备将无法理解它，除非它事先知道它在看什么。这个数据可能是一张图片、一首歌、一条简单的文本消息或者一个HTML文档。因此我们需要告诉接收者数据的类型，以便它可以正确理解数据。 这四个步骤描述了在因特网上进行数据传输的通信模型。其中每一步都由一个协议定义。根据协议的类型，每一步都会对数据进行相应的格式化，这样接收方就能够正确地提取数据了。
+小贴士根据数据传输的用例，在一个特定的模型中可能有更多的步骤。您可以阅读OSI模型。任何人都可以用这个模型在因特网或局域网（LAN）上传输数据。如果我们仔细审视这些步骤，我们会发现它们形成了一个管道：来自一个步骤的数据被发送到另一个步骤进行下一步处理，直到它在因特网上传递。然而，层可能是描述这些步骤的最合适的词汇，我们马上就会知道为什么。
 TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）是我们前面看到的通信模型中的传输层协议，而因特网协议（Internet Protocol，IP）是网络层协议。
 这些协议共同推动了大部分的因特网通信。此时此刻，您的浏览器正在使用 TCP/IP 模型从服务器加载此网页。因此，这些协议共同构成了因特网协议套件 （internet protocol suite），如下图所示（图源维基百科）。
 在上述通信模型中（左侧），应用层从源（如内部存储或 RAM）获取数据并用特定协议（如HTTP）的一些标头将其包装。这会创建一个 HTTP 协议的数据包，并且可以被像 Web 浏览器一样理解它的应用程序读取。
 这个HTTP包将会被发送到传输层。传输层使用 TCP 协议标头以及源端口和目标端口包装数据包。源端口是传输数据的应用程序的端口（如 Web 浏览器），目标端口是运行在接收端的应用程序接收数据的端口。 TCP 包被网络层接收，它用源和目标 IP 地址以及 IP 协议标头将其包装。源IP地址是发送方设备的IP地址，目标地址是接收方设备的IP地址。
-&#x1f4a1;IP 地址是分配给因特网上设备的唯一编号。您可以阅读有关 IPV4 和 IPV6 IP 地址格式获得更多信息。设备的 IP 地址可以在数据传输之前就知道，也可以使用 HTTP 标头中包含的域名从DNS服务器解析。
-一旦数据包被印上IP协议，它就成为了可以通过因特网传输的网络包。这是虚拟层的最后一步（（指）由计算机程序处理（的步骤））。
-最后的链路层是设备上的物理层。这是硬件部分，例如设备上的网卡（NIC），它接收数据包并将源和目标MAC地址添加到数据包中。"/>
+小贴士IP 地址是分配给因特网上设备的唯一编号。您可以阅读有关 IPV4 和 IPV6 IP 地址格式获得更多信息。设备的 IP 地址可以在数据传输之前就知道，也可以使用 HTTP 标头中包含的域名从DNS服务器解析。一旦数据包被印上IP协议，它就成为了可以通过因特网传输的网络包。这是虚拟层的最后一步（（指）由计算机程序处理（的步骤））。"/>
 <meta name="application-name" content="JayaYuan&#39;s Blog">
 <meta name="apple-mobile-web-app-title" content="JayaYuan&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://example.com/httpwithssltls/" /><link rel="prev" href="https://example.com/emptyparameterdeclarator/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://example.com/httpwithssltls/" /><link rel="prev" href="https://example.com/emptyparameterdeclarator/" /><link rel="next" href="https://example.com/2023-summary/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -67,8 +59,8 @@ TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）�
                             "url": "https:\/\/example.com\/httpwithssltls\/featured-image.webp",
                             "width":  869 ,
                             "height":  580 
-                        }],"genre": "posts","keywords": "HTTPS, TCP\/IP, 计算机网络","wordcount":  259 ,
-        "url": "https:\/\/example.com\/httpwithssltls\/","datePublished": "2021-10-07T16:07:22+08:00","dateModified": "2021-10-07T16:07:22+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                        }],"genre": "posts","keywords": "HTTPS, TCP\/IP, 计算机网络","wordcount":  280 ,
+        "url": "https:\/\/example.com\/httpwithssltls\/","datePublished": "2021-10-07T16:07:22+08:00","dateModified": "2021-11-01T10:20:22+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
                     "@type": "ImageObject",
@@ -146,7 +138,7 @@ TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）�
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">简要概述TCP/IP模型、SSL/TLS/HTTPS协议以及SSL证书</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/about" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>JayaYuan</a></span>&nbsp;<span class="post-category">included in <a href="/categories/%E7%BF%BB%E8%AF%91/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>翻译</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-10-07">2021-10-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;259 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-10-07">2021-10-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;280 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -208,16 +200,26 @@ TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）�
 <li>当您给一个人寄信时，您会在信上标明收信人的地址，这样信就能送到正确的人手中。同样地，当您在因特网上发送一些数据时，您需要知道最终接收这些数据的设备的地址。</li>
 <li>当一个网络应用程序在设备中启动（如<strong>Web浏览器</strong>或<strong>Web服务器</strong>）来传输或接收数据时，它将在一个<a href="https://en.wikipedia.org/wiki/Port_%28computer_networking%29" target="_blank" rel="noopener noreffer "><strong>端口</strong></a>上监听因特网数据，如<strong>8080</strong>。发送方需要知道接收方设备的端口，以便数据被正确的应用程序接收，而不是其他可能将其滥用的应用程序。</li>
 </ol>
-<hr>
-<p>&#x1f4a1;<em>这些端口是由操作系统随机分配的，但是我们可以迫使操作系统将应用程序绑定到一个特定的端口上。</em></p>
-<hr>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>小贴士<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">这些端口是由操作系统随机分配的，但是我们可以迫使操作系统将应用程序绑定到一个特定的端口上。</div>
+        </div>
+    </div>
 <ol start="4">
 <li>接收到数据的设备将无法理解它，除非它事先知道它在看什么。这个数据可能是一张图片、一首歌、一条简单的文本消息或者一个HTML文档。因此我们需要告诉接收者数据的类型，以便它可以正确理解数据。</li>
 </ol>
 <p>这四个步骤描述了在因特网上进行<strong>数据传输</strong>的<strong>通信模型</strong>。其中每一步都由一个<strong>协议</strong>定义。根据协议的类型，每一步都会对数据进行相应的格式化，这样接收方就能够正确地提取数据了。</p>
-<hr>
-<p>&#x1f4a1;<em>根据数据传输的用例，在一个特定的模型中可能有更多的步骤。您可以阅读<a href="https://en.wikipedia.org/wiki/OSI_model#Layer_architecture" target="_blank" rel="noopener noreffer ">OSI模型</a>。任何人都可以用这个模型在因特网或局域网（LAN）上传输数据。</em></p>
-<hr>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>小贴士<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">根据数据传输的用例，在一个特定的模型中可能有更多的步骤。您可以阅读<a href="https://en.wikipedia.org/wiki/OSI_model#Layer_architecture" target="_blank" rel="noopener noreffer ">OSI模型</a>。任何人都可以用这个模型在因特网或局域网（LAN）上传输数据。</div>
+        </div>
+    </div>
 <p>如果我们仔细审视这些步骤，我们会发现它们形成了一个管道：来自一个步骤的数据被发送到另一个步骤进行下一步处理，直到它在因特网上传递。然而，<strong>层</strong>可能是描述这些步骤的最合适的词汇，我们马上就会知道<strong>为什么</strong>。</p>
 <h2 id="tcpip通信模型">TCP/IP通信模型</h2>
 <p>传输控制协议（<strong>Transmission Control Protocol</strong>， TCP）是我们前面看到的通信模型中的<strong>传输层</strong>协议，而因特网协议（<strong>Internet Protocol</strong>，IP）是<strong>网络层</strong>协议。</p>
@@ -240,21 +242,36 @@ TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）�
         title="因特网协议套件2" width="280" height="340" /></p>
 <p>在上述通信模型中（左侧），<strong>应用层</strong>从源（如内部存储或 RAM）获取数据并用特定协议（如<a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol" target="_blank" rel="noopener noreffer ">HTTP</a>）的一些<strong>标头</strong>将其包装。这会创建一个 HTTP 协议的数据包，并且可以被像 Web 浏览器一样理解它的应用程序读取。</p>
 <p>这个<strong>HTTP包</strong>将会被发送到<strong>传输层</strong>。传输层使用 <strong>TCP 协议标头</strong>以及<strong>源端口</strong>和<strong>目标端口</strong>包装数据包。源端口是传输数据的应用程序的端口（如 Web 浏览器），目标端口是运行在接收端的应用程序接收数据的端口。 <strong>TCP 包</strong>被网络层接收，它用源和目标 IP 地址以及 <strong>IP 协议标头</strong>将其包装。源IP地址是发送方设备的IP地址，目标地址是接收方设备的IP地址。</p>
-<hr>
-<p>&#x1f4a1;<em>IP 地址是分配给因特网上设备的唯一编号。您可以阅读有关  <a href="https://en.wikipedia.org/wiki/IPv4" target="_blank" rel="noopener noreffer "><strong>IPV4</strong></a> 和  <a href="https://en.wikipedia.org/wiki/IPv6" target="_blank" rel="noopener noreffer "><strong>IPV6</strong></a>  IP 地址格式获得更多信息。设备的 IP 地址可以在数据传输之前就知道，也可以使用 HTTP 标头中包含的<a href="https://en.wikipedia.org/wiki/Domain_Name_System" target="_blank" rel="noopener noreffer "><strong>域名</strong></a>从<a href="https://www.youtube.com/watch?v=mpQZVYPuDGU" target="_blank" rel="noopener noreffer "><strong>DNS</strong></a>服务器解析。</em></p>
-<hr>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>小贴士<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">IP 地址是分配给因特网上设备的唯一编号。您可以阅读有关  <a href="https://en.wikipedia.org/wiki/IPv4" target="_blank" rel="noopener noreffer "><strong>IPV4</strong></a> 和  <a href="https://en.wikipedia.org/wiki/IPv6" target="_blank" rel="noopener noreffer "><strong>IPV6</strong></a>  IP 地址格式获得更多信息。设备的 IP 地址可以在数据传输之前就知道，也可以使用 HTTP 标头中包含的<a href="https://en.wikipedia.org/wiki/Domain_Name_System" target="_blank" rel="noopener noreffer "><strong>域名</strong></a>从<a href="https://www.youtube.com/watch?v=mpQZVYPuDGU" target="_blank" rel="noopener noreffer "><strong>DNS</strong></a>服务器解析。</div>
+        </div>
+    </div>
 <p>一旦数据包被印上IP协议，它就成为了可以通过因特网传输的<strong>网络包</strong>。这是虚拟层的最后一步（<em>（指）由计算机程序处理（的步骤）</em>）。</p>
 <p>最后的<strong>链路层</strong>是设备上的<strong>物理层</strong>。这是硬件部分，例如设备上的网卡（<a href="https://en.wikipedia.org/wiki/Network_interface_controller" target="_blank" rel="noopener noreffer ">NIC</a>），它接收数据包并将源和目标MAC地址添加到数据包中。</p>
-<hr>
-<p>&#x1f4a1;<em>媒体访问控制 （<a href="https://en.wikipedia.org/wiki/MAC_address" target="_blank" rel="noopener noreffer ">MAC</a>） 地址是设备制造商提供的硬件部分的独特地址。使用 MAC 地址，两个设备之间的通信成为了可能</em></p>
-<hr>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>小贴士<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">媒体访问控制 （<a href="https://en.wikipedia.org/wiki/MAC_address" target="_blank" rel="noopener noreffer ">MAC</a>） 地址是设备制造商提供的硬件部分的独特地址。使用 MAC 地址，两个设备之间的通信成为了可能</div>
+        </div>
+    </div>
 <p>一旦数据包被源和目标的MAC地址以及一些<strong>数据传输层的标头</strong>（例如以太网：<a href="https://en.wikipedia.org/wiki/Ethernet" target="_blank" rel="noopener noreffer "><em>Ethernet</em></a>）标记，它就可以被发送到因特网通信设备，如WiFI路由器或者<a href="https://en.wikipedia.org/wiki/Satellite_dish" target="_blank" rel="noopener noreffer ">卫星天线</a> 。它们将负责数据包在因特网上的传输。</p>
 <p>一旦数据包被接收方（上图的右侧）收到，它将被像洋葱一样去皮，直到原始数据（HTML 文档）被恢复。</p>
 <p>一次一层（地提取数据），通过查看该层的协议，数据可以在没有任何误解的情况下被成功提取。原始数据提取后，可被正确的应用程序使用。</p>
 <p>例如，如果服务器使用HTTP协议发送一个HTML页面，Web浏览器完全能够理解 HTTP协议的数据包并从中提取 出HTML 页面。然后，浏览器将在屏幕上呈现这个HTML文档。</p>
-<hr>
-<p>&#x1f4a1;<em>HTTP协议还可用于传输 HTML页面以外的数据。HTTP协议的<code>Content-Type</code>标头可以被浏览器用来理解内容的<a href="https://en.wikipedia.org/wiki/MIME" target="_blank" rel="noopener noreffer ">MIME</a> 类型</em></p>
-<hr>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>小贴士<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">HTTP协议还可用于传输 HTML页面以外的数据。HTTP协议的<code>Content-Type</code>标头可以被浏览器用来理解内容的<a href="https://en.wikipedia.org/wiki/MIME" target="_blank" rel="noopener noreffer ">MIME</a> 类型</div>
+        </div>
+    </div>
 <h2 id="http协议">HTTP协议</h2>
 <p>HTTP协议基于TCP/IP或者<a href="https://en.wikipedia.org/wiki/User_Datagram_Protocol" target="_blank" rel="noopener noreffer ">UDP</a>/IP协议。在将任何数据发送到接收方之前，应该开启发送方和接收方之间的通信通道。这是仅使用 TCP/IP 完成的，没有任何应用层参与，如下图（图源<a href="https://en.wikipedia.org/wiki/Handshaking#TCP_three-way_handshake" target="_blank" rel="noopener noreffer ">维基百科</a>）所示以及TCP三次握手（图源<a href="https://commons.wikimedia.org/wiki/File:TCP_Three-Way_Handshake.svg" target="_blank" rel="noopener noreffer ">维基百科</a>）。</p>
 <p><img
@@ -274,9 +291,14 @@ TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）�
         alt="/httpwithssltls/handshake2.png"
         title="三次握手2" width="1050" height="564" /></p>
 <p>首先，客户端发送一个空的数据包（（此处“空”是指）没有任何应用数据），其中TCP协议的<a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol#TCP_segment_structure" target="_blank" rel="noopener noreffer "><code>SYN</code></a>（<em>synchronize</em>）标志被置为<code>1</code>。当这个数据包被接收方收到后，它知道客户端尝试建立一个连接（会话）。</p>
-<hr>
-<p>&#x1f4a1;<em>应用数据是指包含在应用层中的数据。</em></p>
-<hr>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>小贴士<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">应用数据是指包含在应用层中的数据。</div>
+        </div>
+    </div>
 <p>服务端会返回一个将<code>SYN</code>和<code>ACK</code>（<em>acknowledge</em>）标记置为<code>1</code>的空数据包。当客户端收到这个数据包时，它知道服务端作出了回应并且愿意接受请求。</p>
 <p>然后客户端又会发送一个将<code>ACK</code>标记置为<code>1</code>的空数据包。一旦服务端收到这个数据包，一个TCP通信通道就开启了。</p>
 <p>上述过程被称作<a href="https://en.wikipedia.org/wiki/Handshaking#TCP_three-way_handshake" target="_blank" rel="noopener noreffer ">TCP三次握手</a>。一旦握手完成，一个TCP通信通道就被开启了，客户端或者服务端可以在这个连接上发送并接收应用数据，直到其中一方关闭连接。</p>
@@ -290,13 +312,23 @@ TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）�
         alt="/httpwithssltls/HTTPGETRequest.png"
         title="HTTPGETRequest" width="1050" height="676" /></p>
 <p>正如您在上面截图中看到的那样，当我们想向<code>info.cern.ch</code>服务器发送HTTP GET请求时，首先发生的是TCP三次握手。</p>
-<hr>
-<p>&#x1f4a1;<em>有很多很棒的东西是您无法在一个屏幕截图中看到的。我建议您在您的系统上安装Wireshark并尝试一下。您可以根据这篇精彩的<a href="https://youtu.be/0X2BVwNX4ks?list=PLejHxQ6h_36UrBhQmbN5wSH8xgjDMhhhA&amp;t=2158" target="_blank" rel="noopener noreffer ">演讲</a>使用和应用Wireshark中的过滤器来跟踪TCP/IP通信通道中的数据包。</em></p>
-<hr>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>拓展<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">有很多很棒的东西是您无法在一个屏幕截图中看到的。我建议您在您的系统上安装Wireshark并尝试一下。您可以根据这篇精彩的<a href="https://youtu.be/0X2BVwNX4ks?list=PLejHxQ6h_36UrBhQmbN5wSH8xgjDMhhhA&amp;t=2158" target="_blank" rel="noopener noreffer ">演讲</a>使用和应用Wireshark中的过滤器来跟踪TCP/IP通信通道中的数据包。</div>
+        </div>
+    </div>
 <p>一旦连接建立，HTTP协议数据将作为应用数据，通过网络数据包发送到服务器。此数据包含纯文本格式的HTTP头。</p>
-<hr>
-<p>&#x1f4a1;<em>然而，数据是使用二进制编码的。</em></p>
-<hr>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">然而，数据是使用二进制编码的。</div>
+        </div>
+    </div>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -307,9 +339,14 @@ TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）�
         title="HTTP protocol" width="1046" height="983" /></p>
 <p>一旦服务器接收到该数据，服务器就可以通过将数据发送回客户端来确认请求。从上面的屏幕截图可以看到，服务器使用HTTP协议应用数据进行响应，该数据包含<strong>响应头</strong>和纯文本的<strong>HTML文档</strong>。</p>
 <p>一旦服务器发送回所有数据（可能是一个数据包或多个数据包），客户机必须通过发送空数据包来确认接收，空数据包的<code>ACK</code>标志设置为<code>1</code>，以及确认收到的数据包的<strong>序列号</strong>。</p>
-<hr>
-<p>&#x1f4a1;<em>您可以通过这个<a href="https://www.youtube.com/watch?v=BWILgDt6jz0" target="_blank" rel="noopener noreffer ">视频</a>更好地了解序列号和确认号（ACK）的用途。</em></p>
-<hr>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>拓展<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">您可以通过这个<a href="https://www.youtube.com/watch?v=BWILgDt6jz0" target="_blank" rel="noopener noreffer ">视频</a>更好地了解序列号和确认号（ACK）的用途。</div>
+        </div>
+    </div>
 <p>一旦服务器没有更多的数据发送，它将发送一个<code>FIN</code>（finished）标志设置为<code>1</code>的空数据包，这个标记暗含了结束信息。客户端可以确认数据包并关闭连接，如下图所示（图源<a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol" target="_blank" rel="noopener noreffer ">维基百科</a>）。</p>
 <p><img
         class="lazyload"
@@ -319,21 +356,36 @@ TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）�
         data-sizes="auto"
         alt="/httpwithssltls/wavehand.png"
         title="wavehand" width="400" height="320" /></p>
-<hr>
-<p>&#x1f4a1;<em>在<a href="https://en.wikipedia.org/wiki/HTTP_persistent_connection" target="_blank" rel="noopener noreffer ">HTTP持久连接</a>（keep-alive）中，相同的TCP连接将会被用于请求其他资源。这更高效，因为我们不必一次又一次地进行相同的TCP三次握手。</em></p>
-<hr>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>小贴士<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">在<a href="https://en.wikipedia.org/wiki/HTTP_persistent_connection" target="_blank" rel="noopener noreffer ">HTTP持久连接</a>（keep-alive）中，相同的TCP连接将会被用于请求其他资源。这更高效，因为我们不必一次又一次地进行相同的TCP三次握手。</div>
+        </div>
+    </div>
 <p>很多时候，客户端和服务器之间的通信并不顺畅。可能会丢失数据包，而且数据包可能以错误的顺序到达，因此需要重新传输数据包。</p>
-<hr>
-<p>&#x1f4a1;<em>UDP协议在这方面有所不同。在UDP协议中，接收方不必发送接收确认数据包，并且数据包丢失或数据包顺序也不作任何严肃处理。您可以通过<a href="https://www.youtube.com/watch?v=Vdc8TCESIg8" target="_blank" rel="noopener noreffer ">这个视频</a>了解TCP和UDP协议之间的差异。</em></p>
-<hr>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>拓展<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">UDP协议在这方面有所不同。在UDP协议中，接收方不必发送接收确认数据包，并且数据包丢失或数据包顺序也不作任何严肃处理。您可以通过<a href="https://www.youtube.com/watch?v=Vdc8TCESIg8" target="_blank" rel="noopener noreffer ">这个视频</a>了解TCP和UDP协议之间的差异。</div>
+        </div>
+    </div>
 <h3 id="安全问题">安全问题</h3>
 <p>HTTP是一个不安全的协议，因为HTTP协议以纯文本格式编码。因此任何中间人都可以侦听TCP通信并读取您通过网络传输的个人数据。</p>
 <p>这就是为什么像谷歌这样的搜索引擎在搜索结果中给不安全的网站分配较低的索引。然而，使一个网站安全并不是一件容易的事。但你还是可以使用<a href="https://www.cloudflare.com/" target="_blank" rel="noopener noreffer ">Cloudflare</a>这样的网站来使你的网站安全，而不必担心实施的问题。</p>
 <h2 id="ssltls概述">SSL/TLS概述</h2>
 <p>HTTPS是安全的超文本传输协议（<strong>HyperText Transfer Protocol Secure</strong>）的意思，但是这在某些方面具有误导性。HTTPS协议并不能单独对数据进行加密，事实上，它依赖于<strong>SSL</strong>或<strong>TLS</strong>协议层。</p>
-<hr>
-<p>&#x1f4a1;<em>我打算用TLS协议来指代SSL和TLS协议，很快我们就会明白为什么SSL的名字在21世纪可能会产生误导。</em></p>
-<hr>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">我打算用TLS协议来指代SSL和TLS协议，很快我们就会明白为什么SSL的名字在21世纪可能会产生误导。</div>
+        </div>
+    </div>
 <p>HTTP协议层和TLS协议层都是应用层的一部分。TLS层的作用是使用TLS握手（在TCP握手之后）与服务器建立安全连接，并使用与服务器协商的一些加密算法对HTTP数据进行加密。</p>
 <p>最后的加密数据就成为了服务器将要接收的网络数据包的应用数据。任何中间人都可能获得该数据，但是他们无法理解数据，因为应用数据是加密的。这就防止了<a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack" target="_blank" rel="noopener noreffer ">中间人攻击</a>。</p>
 <p>当HTTP协议与TLS协议结合使用时，它被称为HTTPS协议。为了调用浏览器或程序使用TLS进行通信，我们通常在URL中使用<code>https:// </code>协议前缀。</p>
@@ -342,13 +394,23 @@ TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）�
 <p>其中一些参数是不能有意公开的。使用这些相同或相似的参数，我们可以破译被加密的数据。这种参数被统称为密钥（<strong>key</strong>）。如果密钥公开，任何有权访问的人都可以解密和读取我们的隐私数据。</p>
 <h3 id="非对称加密算法">非对称加密算法</h3>
 <p>在非对称加密算法中，我们有两个用于加密和解密的密钥。<strong>公钥</strong>用于加密数据并将其提供给公众，只有<strong>私钥</strong>（保密不公开）才能破译它。</p>
-<hr>
-<p>&#x1f4a1;<em>这种非对称加密被称为<a href="https://en.wikipedia.org/wiki/Public-key_cryptography" target="_blank" rel="noopener noreffer ">公钥加密法</a>。</em></p>
-<hr>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>小贴士<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">这种非对称加密被称为<a href="https://en.wikipedia.org/wiki/Public-key_cryptography" target="_blank" rel="noopener noreffer ">公钥加密法</a>。</div>
+        </div>
+    </div>
 <p>最流行的非对称加密算法是<a href="https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29" target="_blank" rel="noopener noreffer ">RSA</a>（Rivest-Shamir-Adleman），因为它广泛用于网络上的密钥交换和数字签名验证。但是，现在浏览器正在采用一种更安全、更有效的<a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange" target="_blank" rel="noopener noreffer ">Diffie-Hellman</a>密钥交换算法进行密钥交换。</p>
-<hr>
-<p>&#x1f4a1;<em>RSA私钥也可用于加密数据，公钥可以解密由私钥加密的数据。这用于生成和验证加密数据的数字签名和SSL证书（稍后解释）。</em></p>
-<hr>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>小贴士<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">RSA私钥也可用于加密数据，公钥可以解密由私钥加密的数据。这用于生成和验证加密数据的数字签名和SSL证书（稍后解释）。</div>
+        </div>
+    </div>
 <p>非对称加密算法通常比较慢，而且是CPU密集型（<a href="https://crypto.stackexchange.com/questions/5782/why-is-asymmetric-cryptography-bad-for-huge-data" target="_blank" rel="noopener noreffer ">为什么</a>），密钥或数据的长度越长，加密或解密数据的时间就越长。</p>
 <p>因此，公钥加密法不用于批量数据加密。相反，我们使用对称加密算法来加密或解密大批量的数据，这更快，更高效。而非对称加密仅仅是传输共享对称加密密钥的方法。</p>
 <h3 id="对称加密算法">对称加密算法</h3>
@@ -359,16 +421,26 @@ TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）�
 <h3 id="ssl安全套接字层secure-sockets-layer协议">SSL（安全套接字层<em>secure sockets layer</em>）协议</h3>
 <p>SSL协议最早由网景（<a href="https://en.wikipedia.org/wiki/Netscape" target="_blank" rel="noopener noreffer "><strong>Netscape</strong></a>）浏览器团队设计，SSL2.0于1995年公开发布。它很快被带有安全改进的SSL 3.0所取代，但在2015年被IETF<a href="https://tools.ietf.org/html/rfc7568" target="_blank" rel="noopener noreffer ">废弃</a>。</p>
 <p>目前，SSL协议已被没落（某些变体除外），没有人使用它。 IETF于1999年推出了<a href="https://tools.ietf.org/html/rfc2246" target="_blank" rel="noopener noreffer ">TLS协议的第一个版本</a>，该协议现在是网络上所有加密通信的标准。</p>
-<hr>
-<p>&#x1f4a1;*当有人谈及SSL时，其实他们可能是在说TLS。甚至SSL证书事实上也是TLS证书。<strong>SSL v3.1</strong>或<strong>SSL v4</strong>只是**TLS1.0+*<em>版本的别名。</em></p>
-<hr>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>小贴士<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">当有人谈及SSL时，其实他们可能是在说TLS。甚至SSL证书事实上也是TLS证书。<strong>SSL v3.1</strong>或<strong>SSL v4</strong>只是**TLS1.0+**版本的别名。</div>
+        </div>
+    </div>
 <h3 id="tls传输层安全transport-layer-security协议">TLS（传输层安全<em>transport layer security</em>）协议</h3>
 <p>TLS是对 SSL协议的改进。TLS1.0于1999年推出，经历了一些迭代。当前最受支持的TLS版本是<a href="https://tools.ietf.org/html/rfc5246" target="_blank" rel="noopener noreffer ">TLS1.2</a>。</p>
 <p><a href="https://tools.ietf.org/html/rfc8446" target="_blank" rel="noopener noreffer ">TLS1.3</a>于2018年推出，是对TLS1.2的一次重大革新，提高了效率和数据安全性，减少了建立安全TCP连接的握手请求次数。</p>
 <p>TLS1.3仅支持Diffie-Hellman公钥加密算法的修改版本，用于在客户端和服务器之间共享对称密钥。它还放弃了对用于密钥交换的RSA算法的支持。</p>
-<hr>
-<p>&#x1f4a1;<em>然而，不是所有的浏览器和服务器都支持TLS 1.3。因此，浏览器和服务器可能不兼容TLS1.3的通信，从而使用较低的TLS版本，如TLS1.2。</em></p>
-<hr>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>小贴士<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">然而，不是所有的浏览器和服务器都支持TLS 1.3。因此，浏览器和服务器可能不兼容TLS1.3的通信，从而使用较低的TLS版本，如TLS1.2。</div>
+        </div>
+    </div>
 <h2 id="使用tls12的https握手">使用TLS1.2的HTTPS握手</h2>
 <p>当我们发送带有<code>https://</code>协议前缀的HTTP请求时，首先使用我们之前看到的三次握手建立TCP连接。如下图（图源<a href="https://commons.wikimedia.org/wiki/File:Full_TLS_1.2_Handshake.svg" target="_blank" rel="noopener noreffer ">维基百科</a>）中的蓝线所示。</p>
 <p><img
@@ -379,9 +451,14 @@ TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）�
         data-sizes="auto"
         alt="/httpwithssltls/TLS1.2handshake.png"
         title="TLS1.2handshake" width="1050" height="981" /></p>
-<hr>
-<p>&#x1f4a1;<em>这次TCP层的目标端口是<strong>443</strong>，这是HTTPS协议的<a href="https://tools.ietf.org/html/rfc2818" target="_blank" rel="noopener noreffer ">默认端口</a>。</em></p>
-<hr>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>小贴士<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">这次TCP层的目标端口是<strong>443</strong>，这是HTTPS协议的<a href="https://tools.ietf.org/html/rfc2818" target="_blank" rel="noopener noreffer ">默认端口</a>。</div>
+        </div>
+    </div>
 <p>TCP连接建立后，TLS握手开始。首先，客户端发送一个空数据包，但具有TLS1.2 协议层。该层包含一些元数据和一个<strong>客户端 Hello</strong>消息。</p>
 <p><img
         class="lazyload"
@@ -392,9 +469,14 @@ TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）�
         alt="/httpwithssltls/TLSClientHelloMessage1.png"
         title="TLSClientHelloMessage1" width="1050" height="743" /></p>
 <p>从上面的屏幕截图中可以看到，在<strong>客户端 Hello</strong>握手消息中，我们附上了我们的应用程序（如浏览器）目前支持的一些密码套件（<strong>cipher suites</strong>）列表，我们稍后再谈。</p>
-<hr>
-<p>&#x1f4a1;<em>当发送<strong>客户端 Hello</strong>握手信息时，通信的应用程序开始可能首先尝试使用TLS协议的最高版本，如TLS 1.3，然后降级到服务器支持的合适版本。如果应用程序不支持服务器所要求的版本，它可能会放弃TCP连接并发出警告。</em></p>
-<hr>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">当发送<strong>客户端 Hello</strong>握手信息时，通信的应用程序开始可能首先尝试使用TLS协议的最高版本，如TLS 1.3，然后降级到服务器支持的合适版本。如果应用程序不支持服务器所要求的版本，它可能会放弃TCP连接并发出警告。</div>
+        </div>
+    </div>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -438,9 +520,14 @@ TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）�
         alt="/httpwithssltls/ServerFinished.png"
         title="ServerFinished" width="1050" height="538" /></p>
 <p>一旦客户端收到这个数据包，TLS1.2握手就完成了，应用程序数据可以使用选定的批量数据加密算法（对称加密算法）进行加密/解密，并通过TCP通道传输。</p>
-<hr>
-<p>&#x1f4a1;中间人可以篡改握手，但是由于共享密钥已于RSA加密交换，因此握手完全安全（<em>没理解</em> &#x1f615;）。然而，如果被加密的Finished消息已经被篡改，TCP连接将被废弃并且无法通过同一管道进行进一步的通信。</p>
-<hr>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">中间人可以篡改握手，但是由于共享密钥已于RSA加密交换，因此握手完全安全（<em>没理解</em> &#x1f615;）。然而，如果被加密的Finished消息已经被篡改，TCP连接将被废弃并且无法通过同一管道进行进一步的通信。</div>
+        </div>
+    </div>
 <h3 id="会话密钥session-keys">会话密钥（Session Keys）</h3>
 <p>有时，（客户端）原始的共享密钥不会与服务器共享，无论RSA加密有多强（预先对其进行加密）。相反，（客户端）与服务器共享<strong>预主密钥</strong>（pre-master secret）而不是共享密钥。客户端和服务器根据TLS握手期间协商的算法，使用预主密钥得到相同的共享密钥。此共享密钥将在重用之前的TLS会话（恢复）时生成，而无需经过完整的握手。但是，如果服务器的私钥被泄露，则将无法防止中间人攻击。</p>
 <h2 id="使用tls13的https握手">使用TLS1.3的HTTPS握手</h2>
@@ -448,27 +535,37 @@ TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）�
 <h3 id="安全">安全</h3>
 <p>TLS1.3协议被强制使用<strong>ECDHE</strong>密钥交换算法。它基本算是一种采用椭圆曲线加密技术（<a href="https://en.wikipedia.org/wiki/Elliptic-curve_cryptography" target="_blank" rel="noopener noreffer "><strong>Elliptic-curve</strong></a> cryptography）的<a href="https://en.wikipedia.org/wiki/Diffie%e2%80%93Hellman_key_exchange" target="_blank" rel="noopener noreffer "><strong>Diffie-Hellman</strong></a> (DH) 公钥算法。这两者一起形成了非常安全的ECDHE密码。</p>
 <p>ECDHE的工作方式是在客户端和服务器端保留一个随机生成的私钥。客户端使用 DH算法私有参数、DH算法公共参数和椭圆曲线公共参数生成一个公钥。该公钥将与所有公共参数一起共享给服务器。服务器使用客户端的公钥和参数以及自己的DH算法私有参数，算出自己的公钥并与客户端共享。服务器根据这些结果生成共享密钥。使用服务器的公钥和之前的参数，客户端算出一个共享密钥。DH算法背后花哨的数学使得客户端和服务器可以生成相同的共享密钥。此共享密钥用于批量数据加密。</p>
-<hr>
-<p>&#x1f4a1;我不打算解释ECDHE背后的数学原理，但您可以观看这个<a href="https://www.youtube.com/watch?v=M-0qt6tdHzk&amp;t=2s" target="_blank" rel="noopener noreffer ">精彩的视频</a>来了解DH算法的工作原理。</p>
-<hr>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>拓展<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">我不打算解释ECDHE背后的数学原理，但您可以观看这个<a href="https://www.youtube.com/watch?v=M-0qt6tdHzk&amp;t=2s" target="_blank" rel="noopener noreffer ">精彩的视频</a>来了解DH算法的工作原理。</div>
+        </div>
+    </div>
 <h3 id="前向保密forward-secrecy">前向保密（Forward Secrecy）</h3>
 <p>与TLS1.2 类似，客户端和服务器端生成预主密钥（计算用于批量数据加密的最终会话密钥），而不是原始的共享密钥。</p>
 <p>ECDHE 中的<code>E</code>代表临时参数。这意味着客户端和服务器使用 DH 算法生成的 DH 参数是暂时（<strong>ephemeral</strong>）的。除非重用 TLS 会话，否则每个新的TLS会话都会选择新参数并生成新的会话密钥。</p>
 <p>由于此过程不涉及SSL私钥和公钥，所以它们对提取通过 TLS 1.3 通道传输的数据不是很有用。这使得TLS1.3通信具有完美的前向保密（<a href="https://en.wikipedia.org/wiki/Forward_secrecy" target="_blank" rel="noopener noreffer "><em>PFS</em></a>）。</p>
-<hr>
-<p>&#x1f4a1;如果私有参数、预主密钥或会话密钥泄露，那么攻击者也只能提取单个TLS会话的数据。</p>
-<hr>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">如果私有参数、预主密钥或会话密钥泄露，那么攻击者也只能提取单个TLS会话的数据。</div>
+        </div>
+    </div>
 <h3 id="更短的握手时间shorter-handshake">更短的握手时间（Shorter Handshake）</h3>
 <p>TLS 1.3不仅有完美的前向保密，而且可以使TLS握手非常短。</p>
 <p>与TLS1.2一样，客户端发送<strong>客户端Hello</strong>消息，同时此数据包中还包含最终用于生成共享密钥的公共参数，如下图所示。</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="HTLS1.3ClientHelloMessage.png"
-        data-srcset="HTLS1.3ClientHelloMessage.png, HTLS1.3ClientHelloMessage.png 1.5x, HTLS1.3ClientHelloMessage.png 2x"
+        data-src="/httpwithssltls/TLS1.3ClientHelloMessage.png"
+        data-srcset="/httpwithssltls/TLS1.3ClientHelloMessage.png, /httpwithssltls/TLS1.3ClientHelloMessage.png 1.5x, /httpwithssltls/TLS1.3ClientHelloMessage.png 2x"
         data-sizes="auto"
-        alt="HTLS1.3ClientHelloMessage.png"
-        title="TLS1.3ClientHelloMessage" /></p>
+        alt="/httpwithssltls/TLS1.3ClientHelloMessage.png"
+        title="TLS1.3ClientHelloMessage" width="1050" height="475" /></p>
 <p>在同一数据包中还包含客户端支持的密码套件列表，服务器将选择使用合适的ECDHE算法。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -495,12 +592,10 @@ TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）�
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2021-10-07</span>
+                <span>Updated on 2021-11-01</span>
             </div></div>
         <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/httpwithssltls/index.md" target="_blank">Read Markdown</a>
-                        </span></div>
+            <div class="post-info-md"></div>
             <div class="post-info-share">
                 <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://example.com/httpwithssltls/" data-title="简要概述TCP/IP模型、SSL/TLS/HTTPS协议以及SSL证书" data-hashtags="HTTPS,TCP/IP,计算机网络"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://example.com/httpwithssltls/" data-hashtag="HTTPS"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://example.com/httpwithssltls/" data-title="简要概述TCP/IP模型、SSL/TLS/HTTPS协议以及SSL证书"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://example.com/httpwithssltls/" data-title="简要概述TCP/IP模型、SSL/TLS/HTTPS协议以及SSL证书"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://example.com/httpwithssltls/" data-title="简要概述TCP/IP模型、SSL/TLS/HTTPS协议以及SSL证书"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
             </div>
@@ -514,7 +609,8 @@ TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）�
         </section>
     </div>
 
-    <div class="post-nav"><a href="/emptyparameterdeclarator/" class="prev" rel="prev" title="C语言函数声明中的空参数"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>C语言函数声明中的空参数</a></div>
+    <div class="post-nav"><a href="/emptyparameterdeclarator/" class="prev" rel="prev" title="C语言函数声明中的空参数"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>C语言函数声明中的空参数</a>
+            <a href="/2023-summary/" class="next" rel="next" title="2023年度个人总结">2023年度个人总结<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="giscus" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
@@ -530,5 +626,5 @@ TCP/IP通信模型 传输控制协议（Transmission Control Protocol， TCP）�
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"giscus":{"category":"Comments","categoryId":"DIC_kwDOEfM1ys4Cb9FU","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"en","lazyLoading":true,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"FENP/fenp.github.io","repoId":"MDEwOlJlcG9zaXRvcnkzMDExNTE2OTA="}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"giscus":{"category":"Comments","categoryId":"DIC_kwDOEfM1ys4Cb9FU","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"en","lazyLoading":true,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"FENP/fenp.github.io","repoId":"MDEwOlJlcG9zaXRvcnkzMDExNTE2OTA="}},"search":{"algoliaAppID":"","algoliaIndex":"index.en","algoliaSearchKey":"","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

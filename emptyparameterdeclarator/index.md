@@ -3,7 +3,7 @@
 
 > 总结：函数声明时参数为空是一种陋习，这表明参数类型和数目都不明确，可能会导致UB
 
-### 函数声明：int getP()与int getP(void)
+函数声明：int getP()与int getP(void)
 
 ```c
 #include <stdio.h>

@@ -4,7 +4,15 @@
         <link>https://example.com/categories/</link>
         <description>Categories - Category - JayaYuan&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>jayayuan@outlook.com (JayaYuan)</managingEditor>
-            <webMaster>jayayuan@outlook.com (JayaYuan)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 07 Oct 2021 16:07:22 &#43;0800</lastBuildDate><atom:link href="https://example.com/categories/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>jayayuan@outlook.com (JayaYuan)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 24 Dec 2023 16:20:23 &#43;0800</lastBuildDate><atom:link href="https://example.com/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>随笔</title>
+    <link>https://example.com/categories/%E9%9A%8F%E7%AC%94/</link>
+    <pubDate>Sun, 24 Dec 2023 16:20:23 &#43;0800</pubDate>
+    <author>JayaYuan</author>
+    <guid>https://example.com/categories/%E9%9A%8F%E7%AC%94/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>翻译</title>
     <link>https://example.com/categories/%E7%BF%BB%E8%AF%91/</link>
     <pubDate>Thu, 07 Oct 2021 16:07:22 &#43;0800</pubDate>
